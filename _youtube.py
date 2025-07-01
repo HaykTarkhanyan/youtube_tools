@@ -87,11 +87,14 @@ class YouTubeVideo:
             raise ValueError("No audio stream available")
         audio_stream.download(output_path=output_path)
         
-    def download_video(self, output_path=None) -> None:
+    def download_video(self, output_path=None, highest_quality=False) -> None:
+        print(f"Downloading video {self.video.video_id} to {output_path} with highest quality: {highest_quality}")
         if output_path is None:
             output_path = self.video.video_id
-        
-        video_stream = self.video.streams.get_lowest_resolution()
+        if highest_quality:
+            video_stream = self.video.streams.get_highest_resolution()
+        else:
+            video_stream = self.video.streams.get_lowest_resolution()
         if not video_stream:
             raise ValueError("No video stream available")
         video_stream.download(output_path=output_path)

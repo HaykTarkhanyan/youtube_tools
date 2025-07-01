@@ -1,9 +1,13 @@
-import deepl
+# import deepl
 import googletrans
 from typing import List
 from abc import ABC, abstractmethod
 from googletrans import Translator
 
+async def google_translate(text, target_lang):
+    async with Translator() as translator:
+        result = await translator.translate(text, dest=target_lang)
+        return result.text
 
 class BaseTranslator(ABC):
     @abstractmethod
