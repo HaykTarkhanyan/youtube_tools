@@ -1,0 +1,3 @@
+[openai]
+model = "gpt-4o"
+prompt = "You are given a YouTube transcript with timestamps.Identify the key segments/topics and return a JSON array where each object has:\ntitle – short segment title\nstart_time – segment start timestamp (e.g. '00:03:15')\nend_time – segment end timestamp (e.g. '00:07:42')\ntext – brief summary or representative excerpt. [INSTRUCTIONS]The text should be in Armenian as the transcript, you are allowed to use English for terminology or technical terms if needed.\n\nYou need to be technical and precise"
