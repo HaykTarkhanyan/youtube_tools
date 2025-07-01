@@ -1,0 +1,21 @@
+video_id,title,description,publish_date,keywords,length_seconds,views,likes,url
+ZOOWqchxETU,[01] OpenAI + timestamp generation project | Libraries,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python_libs/01_openai_api_timestamp_generator.html#audio
+
+Թեմաներ՝
+00:00 Դասի պլան
+02:00 API
+11:57 token-ը թաքշցնել
+21:15 Text generation
+25:25 Image 
+33:40 Audio
+34:37 Structured output
+40:19 Image fix
+43:00 History
+45:32 Timestamp generation
+53:45 Հայերենի մոդելներ
+
+#python #machinelearning #openai #programming #artificialintelligence",2025-06-28 22:30:06-07:00,[],3701,70,,https://youtube.com/watch?v=ZOOWqchxETU

@@ -1,0 +1,385 @@
+video_id,title,description,publish_date,keywords,length_seconds,views,likes,url
+BaQ0-hrcRtI,Python | Ինչպես օգտվել Profound.academy հարթակից,"Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+profound.academy
+
+Նաև որոշ տեսություն պարունակող բաժիններում գուցե վերջում տեսնեք AI Explainer դաշտ՝ կարող եք AI-ին հենց էդ բաժնից հարցեր տալ ու ասել որ բացատրի նյութը։ 
+
+00:00 Սկիզբ
+00:18 Գրանցվել, լեզուն/տեսքը փոխել
+00:50 Առաջին խնդիր
+01:58 AI օգնական
+03:08 Հարցեր, մեկնաբանություններ, լուծումներ
+03:50 Run-ը աշխատում ա, submit-ը չէ
+05:08 Ուրիշների կոդերը նայել
+05:40 Copy Paste
+06:22 Լրացուցիչ խնդիրներ
+06:48 Ranking, Profile",2025-04-09 14:34:50-07:00,[],436,537,,https://youtube.com/watch?v=BaQ0-hrcRtI
+_C3sP0X7U_E,"[01] Print, Comment-ներ, Թվային փոփոխականներ, Input | Տես․ 1 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝ 
+https://hayktarkhanyan.github.io/python_math_ml_course/python/01_intro.html
+
+00:00:00 Կոդ գրելու միջավայրը
+00:02:02 Print
+00:07:40 Print - Sep
+00:15:30 Print - End
+00:26:45 Comments
+00:31:40 Փոփոխականներ
+00:34:54 Փոփոխականների անուններ
+00:41:40 Մի քանի փոփոխականի մի տողով արժեքներ վերագրել
+00:47:20 Թվեր և թվաբանական գործողություններ
+01:00:58 Input
+01:20:10 Տնային
+
+#python #coding #pythonprogramming #programming",2025-04-09 13:30:22-07:00,[],6207,623,,https://youtube.com/watch?v=_C3sP0X7U_E
+Xdb7ivwWqxE,"[02] Print, Comment-ներ, Թվային փոփոխականներ, Input | Գործ․ 1 | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝ 
+https://hayktarkhanyan.github.io/python_math_ml_course/python/01_intro.html
+
+00:00:00 Ողջույններ
+00:06:14 գնահատականների խնդիրը
+00:28:01 քառակուսի հավասարման լուծում
+00:43:10 հեշտ էր չէ՞ (2.1)
+00:46:15 ուսանողներ և խնձորներ 2 (4.3)
+01:11:45 թվաբանական պրոգրեսիա (4.1)
+01:15:20 խառը հարցեր
+
+#python #coding #pythonprogramming #programming",2025-04-11 11:10:11-07:00,[],5081,472,,https://youtube.com/watch?v=Xdb7ivwWqxE
+PsTB0hj95OM,"[03] Պայմաններ։ Bool, if, elif, else, nested if, match | Տես․ 2 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/02_conditions.html
+
+Տնային՝
+Profound բաժին 5 (Պայմաններ) - լրիվ
+Profound բաժին 7 (Ներդրված պայմաններ) - լրիվ
+Profound բաժին 9 (Փոփոխականներ և տիպեր) - 1 - 10 (ներառյալ)
+
+Թեմաներ՝
+00:00 Ողջույններ
+00:45 Bool, համեմատության գործիքներ
+04:36 is-ը մանրամասն
+14:35 Բուլյան տրամաբանություն
+18:45 Վարժություններ
+23:15 Bool-երը ինչպես 1 և 0
+26:04 bool(x) 
+46:50 Պայմաններ (if, else)
+01:12:55 elif (else if)
+01:23:11 Օրինակներ
+01:37:05 Ներդրված if
+01:50:40 match
+01:57:00 Տնային
+
+#python #coding #pythonprogramming #programming",2025-04-17 04:57:37-07:00,[],7028,326,,https://youtube.com/watch?v=PsTB0hj95OM
+2GMufITVgt4,"[04] Պայմաններ։ Bool, if, elif, else, nested if, match | Գործ․ 2 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝ 
+https://hayktarkhanyan.github.io/python_math_ml_course/python/02_conditions.html
+
+00:00:00 Մինի հայտարարություններ
+00:02:16 BMI calculator
+00:20:47 Discounts 
+00:59:22 8.6 Շախմատային ձիեր
+00:23:20 Մինի հայտարարություն 2
+
+#python #coding #pythonprogramming #programming",2025-04-18 13:09:58-07:00,[],5245,165,,https://youtube.com/watch?v=2GMufITVgt4
+NkqFvmdOpUY,"[05] String, Range, List, some functions on lists/floats, Packages (intro) | Տես․ 3 | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/03_str_range_list_some_funcs.html
+
+Տնային՝
+Profound բաժին 9 (Փոփոխականներ և տիպեր) - 11-ից մինչև վերջ
+Profound բաժին 11 (Տողեր) - լրիվ
+Profound բաժին 13 (Ցուցակներ և միջակայքեր) - լրիվ
+
+2023 թվի տարբերակում չեմ հազում : )
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:04:35 String-ներ և escape character-ներ
+00:31:54 List-եր և indexing
+00:45:20 Range և slice գործողություններ
+00:52:00 F-string ֆորմատավորում
+01:20:40 Math գրադարան և import-ներ",2025-04-23 12:16:25-07:00,[],6513,266,,https://youtube.com/watch?v=NkqFvmdOpUY
+mmOGK3bYxFQ,"[06] Ցիկլեր (Loops) - for, break, continue, else, while | Տես․ 4 | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/04_loops.html
+
+Տնային՝
+1. Profound [բաժին 15] (for ցիկլեր) - լրիվ
+2. Profound [բաժին 17] (while ցիկլեր) - լրիվ
+3. Profound [բաժին 18] (break, continue, while/for else) - լրիվ
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:00 Python-ում ցիկլեր, տեսություն
+24:10 Ցիկլերի մոտիվացիա և օրինակներ
+41:20 for և while ցիկլերի համեմատություն
+56:30 Ցիկլերում break և continue օպերատորներ 
+1:13:40 for...else կառուցվածք",2025-04-28 12:24:01-07:00,[],6716,242,,https://youtube.com/watch?v=mmOGK3bYxFQ
+LD5e17CoBbY,"[07] Ցիկլեր (Loops) - for, break, continue, else, while | Գործ․ 3 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/04_loops.html
+
+Google Form`
+forms.gle/jvG1Y71hF97ygEjU6
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:00:00 Hangman (виселица)
+00:29:54 Լուծման քայլերի մշակում 
+00:50:04 Bubble Sort ալգորիթմի բացատրություն
+01:21:40 Bubble Sort օպտիմիզացիա և ամփոփում",2025-05-01 01:00:33-07:00,[],6186,123,,https://youtube.com/watch?v=LD5e17CoBbY
+mwyXmRrJ4B8,[08] List/String Methods; Ternary Operators; List Comprehensions | Տես․ 5 | Python,"Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/05_Lst_str_methods_one_line_if_for.html
+
+Տնային՝
+1. Profound [բաժին 19](https://profound.academy/hy/python-introduction/m-ev-LIibSASYz3mIPL5uR9JK) (Տողերի և զանգվածների մեթոդներ) - լրիվ
+2. Profound [բաժին 22](https://profound.academy/hy/python-introduction/list-comprehension-hAuWo5pKshjeMSt0b6F4) (List Comprehensions) - 1 - 7 (ներառյալ)
+
+Թեմաներ՝
+00:00 String Methods
+01:49 Կոդի վիզուալիզատոր (https://pythontutor.com/render.html#mode=edit)
+04:25 Մեծատառ/փոքրատառ
+08:19 Սկիբզ/վերջ
+11:19 Ինչերից ա բաղկացած
+12:30 Տեքստից ցուցակ ու հակառակը
+17:15 Հաշվել, գտնցել, փոխել
+20:20 Բացատազերծել
+23:28 Հարցեր 
+
+26:19 Ընդլայնել, ջնջել (List methods)
+32:23 Սորտավորել
+36:35 Շրջել
+37:12 Էլեմենտ հեռացնել 
+43:16 Տեղադրել
+44:14 Գտնել
+47:05 Առաջադրանք կարգին հաղորդումից
+
+54:45 Ternary (conditional) operators
+59:25 Ներդրված Ternary
+01:05:40 Արագություն
+
+01:08:25 List comprehension
+01:23:17 Արագություն
+01:31:00 Առաջադրանք - ավելի մեծ քանց նախորդը
+
+01:39:25 Տնային
+01:40:55 Հարցեր",2025-05-03 10:13:35-07:00,[],6735,167,,https://youtube.com/watch?v=mwyXmRrJ4B8
+TIWU_bjFuUc,"[09] Tuple, Set, Dictionary | Տես․ 6 | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/06_tuple_set_dictionary.html
+
+Տնային՝
+Բաժին 24 (tuple-ներ և set-եր)
+Բաժին 25 (dictionary)
+
+Թեմաներ՝
+00:00 Tuple
+14:00 Set
+31:54 Dictionary մոտիվացիա
+40:39 Dictionary",2025-05-08 09:18:43-07:00,[],4527,152,,https://youtube.com/watch?v=TIWU_bjFuUc
+zf8xEfdLXRo,"[10] Tuple, Set, Dictionary | Գործ․ 4 | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/06_tuple_set_dictionary.html
+
+Թեմաներ՝
+00:00 Ցուցակի էլեմենտների քանակները գտնել
+39:20 Telegram-ի նամակագրությունների տվյալների հետ աշխատանք",2025-05-19 06:07:26-07:00,[],5024,107,,https://youtube.com/watch?v=zf8xEfdLXRo
+fvAO4Qrm_v4,[11] Functions 1 | Տես․ 7 | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/07_functions_1.html
+
+Տնային՝
+Բաժին 26 (ֆունցկիաներ) - լրիվ
+Բաժին 27 (ֆունցկիաներ 2) - լրիվ 
+
+Թեմաներ՝
+00:00 Մոտիվացիոն օրինակ
+02:57 Սկիզբ 
+05:45 Արգումենտով ֆունկցիա
+19:32 Մի քանի արգումենտ
+12:10 Return
+21:43 Default արգումենտներ
+27:36 Positional/keyword արգումենտներ
+31:21 Positional/keyword only արգումենտներ
+41:54 *args
+54:00 **kwargs
+58:30 * unpacking operator
+01:09:37 zip
+01:21:14 enumerate
+01:30:10 Տնային",2025-05-19 06:22:28-07:00,[],5531,104,,https://youtube.com/watch?v=fvAO4Qrm_v4
+bGYmAXGeFQw,[12] Functions 2 | Տես․ 8 | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/07_functions_2.html
+
+Տնային՝
+1. Profound բաժին 28 (Lambda և բարձր կարգի ֆունկցիաներ) - լրիվ
+2. Կարող եք նաև անել տնայիններ Profound-ի միջին մակարդակի դասընթացի համապատասխան [բաժնից](https://profound.academy/hy/python-mid/d-ev-keyword-5LvKxDSUICCBH7Z96b1n)
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:00:00 Ֆունկցիաների դոկումենտացիա (docstring) 
+00:30:00 Սքոփ (scope) և LEGB կանոն - փոփոխականների տեսանելիության տիրույթներ
+00:54:00 Mutable օբյեկտների փոխանցում ֆունկցիաներին - default արգումենտների խնդիրներ
+01:32:00 Lambda ֆունկցիաներ - անանուն ֆունկցիաներ
+01:53:00 Բարձր կարգի ֆունկցիաներ (map, filter, reduce)",2025-05-21 23:46:34-07:00,[],7395,84,,https://youtube.com/watch?v=bGYmAXGeFQw
+DaVBaNdg2_8,[13] Functions | Գործ․ 5 | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/07_functions_2.html
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:00:00 Password generator
+00:29:30 Random մոդուլի կիրառում
+00:47:00 Մեծ թվերի օրենքի օրինակ
+01:15:00 Matplotlib գրաֆիկների օգտագործում
+01:30:00 Դասի ամփոփում և հաջորդ թեմաներ",2025-05-24 09:28:51-07:00,[],6694,55,,https://youtube.com/watch?v=DaVBaNdg2_8
+WpqHzsHwqvA,"[14] Terminal, modules, file I/o | Տես․ 9 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/09_files_packages_terminal.html
+
+Թեմաներ՝
+00:00 ToDo",2025-05-31 04:41:03-07:00,[],5996,90,,https://youtube.com/watch?v=WpqHzsHwqvA
+f_bHRxD9JL0,"[15] Git/Github, Anaconda, PEP8 | Տես․ 10 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/10_git_conda_pep8.html
+
+Թեմաներ՝
+00:00 Հարցեր
+04:52 Git / Github
+01:10:48 Anaconda
+01:37:52 PEP8",2025-05-31 05:17:18-07:00,[],7531,54,,https://youtube.com/watch?v=f_bHRxD9JL0
+tvZzjcaGs1U,"[16] YouTube playlist analytics, mini project | Գործ․ 6  | Python","Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+
+Թեմաներ՝
+00:00 ToDo",2025-06-04 04:25:54-07:00,[],6601,180,,https://youtube.com/watch?v=tvZzjcaGs1U
+sl0luHbehyY,[17] Exception handling | Տես․ 11 | Python,"Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/11_exception_handling.html
+
+Թեմաներ՝
+00:00 Հարցեր
+01:42 Սկիզբ
+27:50 else
+32:11 finally
+38:00 raise, assert
+46:13 warnings
+53:38 Մոտեցումներ
+57:44 error-ների տոհմածառ
+01:02:38 Տնային",2025-06-06 00:00:51-07:00,[],4171,70,,https://youtube.com/watch?v=sl0luHbehyY
+_Z0JVmqZzeo,"[18] Streamlit, Recursion, any/all | Տես․ 12 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/12_streamlit_recursion_decorators_misc.html
+
+Թեմաներ՝
+00:00 streamlit
+47:02 any/all
+53:08 recursion
+01:39:51 տնային",2025-06-07 07:51:14-07:00,[],6394,75,,https://youtube.com/watch?v=_Z0JVmqZzeo
+VaPR8vdwavs,[19] Decorators | Տես․ 13 | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/13_decorators.html
+
+Թեմաներ՝
+00:00 ToDo",2025-06-11 23:00:20-07:00,[],4327,43,,https://youtube.com/watch?v=VaPR8vdwavs
+pI6pgobJ4yo,[20] OOP 1 - Classes | Տես․ 14 | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/14_classes.html
+
+Թեմաներ՝
+00:00 ToDo",2025-06-12 23:30:32-07:00,[],6672,68,,https://youtube.com/watch?v=pI6pgobJ4yo
+OXDN8nzQYak,"[21] OOP 2 - Inheritance (MRO-ն սխալներով եմ բացատրում), Polymorphism | Տես․ 15 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/15_inheritance_polymorphism.html
+
+Թեմաներ՝
+00:00 ToDo",2025-06-13 23:52:56-07:00,[],7434,91,,https://youtube.com/watch?v=OXDN8nzQYak
+EPtTBUbmHk0,"[22] OOP 3 - Encapsulation, Abstraction | Տես․ 16 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/16_encapsulation_abstraction.html
+
+Թեմաներ՝
+00:00 ToDo",2025-06-18 23:30:07-07:00,[],3389,13,,https://youtube.com/watch?v=EPtTBUbmHk0
+i_3l8xSZpVg,"[23] OOP 4 - Data Class, Generator, Iterator, Context Manager | Տես․ 17 | Python","Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/17_dataclass_iterator_generator_context_manager.html
+
+Թեմաներ՝
+00:00 ToDo",2025-06-21 08:43:12-07:00,[],7239,61,,https://youtube.com/watch?v=i_3l8xSZpVg
+WIk3iAXErBY,[24] Final project - YouTube video info extractor + transcript translator | Python,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python/18_youtube_translator.html
+
+Վարկյանները գեներացված են ԱԲ-ի կողմից, ձեռքով նորմալ չեմ ուղղել
+00:00:00 Գործնական դասերի ավարտ և հաջորդ թեմաների պլան
+00:11:00 YouTube-ից վիդեո մետադատաների քաշում dataclass-ով
+00:27:00 Transcript (ենթագրերի) քաշում և աշխատանք
+00:33:00 Աուդիո և վիդեո ֆայլերի ներբեռնում YouTube-ից
+00:52:00 Google Translate և DeepL API-ների հետ աշխատանք
+01:13:00 Աբստրակտ կլասներ և թարգմանիչների Pipeline
+01:26:00 Git և քոմիթների մասին քննարկում",2025-06-26 23:00:23-07:00,[],5794,50,,https://youtube.com/watch?v=WIk3iAXErBY
+ZOOWqchxETU,[01] OpenAI + timestamp generation project | Libraries,"Դասընթացին միանալու հղումը՝ 
+https://t.me/metric_academy
+
+Նյութը՝
+https://hayktarkhanyan.github.io/python_math_ml_course/python_libs/01_openai_api_timestamp_generator.html#audio
+
+Թեմաներ՝
+00:00 Դասի պլան
+02:00 API
+11:57 token-ը թաքշցնել
+21:15 Text generation
+25:25 Image 
+33:40 Audio
+34:37 Structured output
+40:19 Image fix
+43:00 History
+45:32 Timestamp generation
+53:45 Հայերենի մոդելներ
+
+#python #machinelearning #openai #programming #artificialintelligence",2025-06-28 22:30:06-07:00,[],3701,70,,https://youtube.com/watch?v=ZOOWqchxETU

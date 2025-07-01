@@ -7,9 +7,13 @@ from dataclasses import dataclass
 class VideoInfo:
     video_id: str
     title: str
-    keywords: List[str]
+    description: str
     publish_date: str  
+    keywords: List[str]
     length_seconds: int
+    views: int
+    likes: int
+    url: str
     
     @staticmethod
     def get_days_since_publish(publish_date) -> int:
@@ -28,6 +32,9 @@ class VideoInfo:
         
         self.days_since_publish = self.get_days_since_publish(self.publish_date)
         
+        self.length_minutes = self.length_seconds // 60
+        
+        self.weeks_since_publish = self.days_since_publish // 7
         
 class YouTubeVideo:
     def __init__(self, url: str):
@@ -37,9 +44,13 @@ class YouTubeVideo:
         return VideoInfo(
             video_id=self.video.video_id,
             title=self.video.title, 
-            keywords=self.video.keywords,
+            description=self.video.description,
             publish_date=self.video.publish_date,
-            length_seconds=self.video.length
+            length_seconds=self.video.length,
+            keywords=self.video.keywords,
+            views=self.video.views,
+            likes=self.video.likes,
+            url=self.video.watch_url
         )
     
     def get_transcript(self, language: str = "a.hy", return_srt: bool = True) -> str:

@@ -1,0 +1,403 @@
+video_id,title,description,publish_date,keywords,length_seconds,views,likes,url
+M5ur3GqsLh0,"[2023] [01] Print, comments, variables, arithmetic operations, input | Տես. 1 | Python","1. կոդը (https://colab.research.google.com/drive/1u6GWUx2gixNqRlRSDZqHok7miF0DdrTB?usp=sharing)
+2. սլայդերը (https://docs.google.com/presentation/d/1wLEnmVYFAvfDMnsNDnFQeVVoMY6nuBUTMLr4siTSJag/edit?usp=sharing)
+
+Տնային՝ առաջին երկու բաժինը այստեղից (https://profound.academy/hy/python-introduction)
+
+00:00 Կոդի սկիզբ
+02:03 Print() հրաման
+15:03 Comment/ մեկնաբանություններ
+19:06 Փոփոխականներ/variables
+30:11 Ամրագրված անուններ
+37:03 թվերի տեսակները
+42:23 թվաբանական գործողություններ
+55:00 Input()
+01:08:15 Տնայիններ
+01:20:50 հարցեր",2025-06-22 06:02:07-07:00,[],4767,40,,https://youtube.com/watch?v=M5ur3GqsLh0
+Fwk1PyLotOg,"[2023] [02] Print, comments, variables, arithmetical operations, input | Գործ. 1 | Python","կոդը՝ 
+colab.research.google.com/drive/1_r3kzweCkdfBKEYDPkW0fBgG0vjO3M3g?usp=sharing
+
+մնացած մասը profound.academy-ով ենք արել
+
+Վարկյանները մի քիչ սխալ են
+00:00 սկիզբ
+02:10 1.10 հերթականության շրջումը
+07:45 գնահատականների խնդիրը
+18:00 քառակուսի հավասարման լուծում
+41:20 լրացուցիչ՝ 1.1 հեշտ էր չէ՞
+47:23 լրացուցիչ՝ 1.3 գնումներ
+59:01 լրացուցիչ՝ 2.1 հանրահաշվական պրոգրեսիա
+01:04:40 լրացուցիչ՝ 2.3 ուսանողներ և խնձորներ 2
+01:35:20 վերջաբան",2025-06-22 06:03:55-07:00,[],5380,36,,https://youtube.com/watch?v=Fwk1PyLotOg
+UZ6lVl0kOlo,"[2023] [03] Պայմաններ։ Bool, if, elif, else, nested if | Տես․ 2 | Python","Բաժիններ՝
+00:00 Ողջույն բոլորին
+01:12 Բուլյաններ, համեմատության օպերատորներ
+04:48 is-ը մանրամասն
+10:10 Բուլյան տրամաբանություն
+13:30 Վարժություններ
+18:36 Փոխանցականություն
+20:46 Բուլյաններ ինչպես 1-եր ու 0-ներ
+25:00 bool() հրաման
+28:30 if պայման 
+35:50 elif 
+39:15 Օրինակներ
+52:10 Ներդրված if-եր
+01:20:40 Հարցեր
+01:31:40 Տնային
+01:34:00 Հարցեր
+
+Դասընթացին միանալու հղումը՝ 
+t.me/metric_academy
+
+Կոդը՝
+https:// colab.research.google.com/drive/1-2qjb-yTz1cxwkNEF9miQig20hvi_pwg?usp=sharing
+
+Տնային՝
+Profound բաժին 5 (Պայմաններ) - լրիվ
+Profound բաժին 7 (Ներդրված պայմաններ) - լրիվ",2025-04-18 07:41:21-07:00,[],6043,94,,https://youtube.com/watch?v=UZ6lVl0kOlo
+wx3wn5SPt3g,"[2023] [04] Պայմաններ։ Bool, if, elif, else, nested if | Գործ․ 2 | Python","Վարկյաններ
+00:00 Ողջույն բոլորին
+00:41 6.1,2,3 Կարճ վարժություններ բուլյաններից
+08:19 8.1 Գործակալ 007
+21:50 8.3 Հռոմեական թվեր
+53:50 8.5 Շախմատի թագուհի
+01:22:03 8.4 Միջակայքերի հատում
+01:58:34 Fizzbuzz",2025-04-18 07:41:58-07:00,[],7729,85,,https://youtube.com/watch?v=wx3wn5SPt3g
+6Aktg75ZquA,"[2023] [05] Բաժիններ 3, 5, 7 | Տնայինների քննարկում 1 | Python Profound","մի քիչ ծուռ են վարկյանները
+00:00 Ողջույն բոլորին
+03:50 1.14
+08:01 3.16 թվի մեջտեղի երկու թվանշան
+12:32 3.17 ժամացույցի խնդիր
+23:23 3.18 ժամացույց ավելի հետաքրքիր դեպք
+46:30 5.8 4 թվերից մեծագույնը
+01:01:44 5.10 դրականների գումար
+01:09:05 7.9 ռուլետկա
+01:25:40 7.13 գույների խառնուրդ
+01:40:01 7. 14 դժվար պայմաններ",2025-04-23 12:35:01-07:00,[],6459,47,,https://youtube.com/watch?v=6Aktg75ZquA
+8XydwiXHcso,"[2023] [06] String, Range, List, some functions on lists/floats, Packages (intro) | Տես․ 3 | Python","կոդը՝ 
+colab.research.google.com/drive/1-l9msFV3a67nJTAsT2yxjeCvMF7GaSEm?usp=sharing
+
+Տնային` բաժիններ 9, 11, 13
+
+վարկյաններ՝ (մի քիչ ծուռ)
+00:00 Ողջույն բոլորին
+01:10 strings (տողեր)
+03:11 \ escape character
+07:15 տողերի գումարում և թվով բազմապատկում
+15:55 հստակ սիմվոլների հետ աշխտաել indexing 
+22:20 մի քանի սիմվոլ ընտրել՝ slicing
+47:20 range
+52:20 formatted string
+59:35 raw string
+01:02:20 immutability
+01:04:30 in operator
+01:06:00 list (ցուցակ)
+01:18:00 list, float methods
+01:22:00 գրադարան
+01:32:00 տնային",2025-04-23 12:17:41-07:00,[],5549,71,,https://youtube.com/watch?v=8XydwiXHcso
+EMeoo2tYjIA,"[2023] [07] String, Range, List, some functions on lists/floats, Packages (intro) | Գործ․ 3 | Python","կոդը՝ 
+colab.research.google.com/drive/1DOXiSja4a8_QK9s8XY_60xWwWzKsEf7l?usp=sharing
+
+Մի քիչ ծուռ են վարկյանները
+00:00 Ողջույն բոլորին
+01:30 Տողը պոլինդրոմ ա թե չէ
+10:50 լիստի միջինը հաշվել
+12:52 range-ի խնդիր՝ մինչև 200 զույգ թվերի գումար
+23:59 rangeերից հարցեր 
+28:01 պարզ տեքստի տպումը՝ SQ6.1
+32:10 հեռախոսահամարներ SQ6.2
+01:06:00 շրջել միջակայքը SQ6.3",2025-04-25 08:37:28-07:00,[],5789,111,,https://youtube.com/watch?v=EMeoo2tYjIA
+C34fNG0VuBA,"[2023] [08] For, while ցիկլեր | Տես․ 4 | Python","կոդը՝ 
+colab.research.google.com/drive/1DHyYUjfZw1PQaREvuhfvzjIQR3_UnVGG?usp=sharing
+
+00:00 Ողջույն բոլորին
+07:00 for range
+30:27 տպել զույգ ինդեքսով թվերը
+37:30 for string
+40:15 break 
+44:40 continue
+49:18 for else
+01:02:40 while
+01:10:15 while break 
+01:16:25 while else
+01:28:00 հարցեր
+01:30:00 տնային",2025-05-26 02:50:10-07:00,[],5513,31,,https://youtube.com/watch?v=C34fNG0VuBA
+Fbx_K6FnCnU,"[2023] [09] Ցիկլեր (for, while) | Գործ. 4 | Python","կոդը՝
+colab.research.google.com/drive/1C_wOTksrifsVlQW2D4A3pMZTzvKl6SsB?usp=sharing
+
+Վարկյանները մի քիչ ծուռ են դրած
+00:00 Ողջույն բոլորին
+04:00 սկիզբ
+04:33 թվազույգ որի գումարը թիրախին ա հավասար
+29:50 տեքստի տառերի քանակ
+54:20 թիվը պարզ ա թե չէ
+01:15:00 չինգաչունգ
+01:53:00 random-ի հետ կապված",2025-05-26 02:45:17-07:00,[],7247,25,,https://youtube.com/watch?v=Fbx_K6FnCnU
+-JzN1VtcYj4,"[2023] [10] List, string methods; bulls and cows game | Տես. 5  + մինի պրոեկտ Python","00:00 String methods
+21:13 List methods
+50:55 Bulls and cows",2025-06-22 06:05:35-07:00,[],4342,4,,https://youtube.com/watch?v=-JzN1VtcYj4
+lwQdNzTKiFI,"[2023] [11] Բաժիններ 3, 5, 7 | Տնայինների քննարկում 2 | Python Profound","00:00 1.14 փոփոխականի բաժանարար
+08:13 11.6 երկարությունները կարևոր են
+23:30 15.4 կրկնիր իմ ետևից
+33:50 15.5 ուղղանկյուն
+39:30 15.7 ցուցակի մուտքագրում
+44:36 15.8 n-ի բաժանարարներ
+52:20 15.9 եռանկյուններ
+59:50 17.9 թվանշաններ
+01:08:30 17.9 ալտերնատիվ լուծում
+01:28:50 11.10 կրկնօրինակների հայտաբերում
+01:33:00 11.13 տառերը",2025-05-03 10:25:14-07:00,[],5716,94,,https://youtube.com/watch?v=lwQdNzTKiFI
+G-0_QM2BJxA,"[2023] [12] Ternary operator list comprehensions + tuple, set, dict | Տես. 6 | Python","Ternary operator list comprehensions`
+colab.research.google.com/drive/1p2e775bl_66cEIl7uCfG1T5W3CVWO7X9?usp=sharing
+
+tuple, set, dict`
+colab.research.google.com/drive/1clIULv35LHW8_ObAvB1h3jFnMcernnfT?usp=sharing
+
+Վարկյաններ՝
+00:00 Ողջույն բոլորին
+03:17 ternary operator
+09:12 nested ternary operator
+20:42 list comprehension
+56:12 տնային 1
+57:52 tuple
+01:08:57 set
+01:22:52 dictionary
+02:00:47 տնային 2",2025-06-22 06:07:09-07:00,[],7305,9,,https://youtube.com/watch?v=G-0_QM2BJxA
+hm_H0h5ta9Q,[2023] [13] Ֆունկցիաներ 1 | Տես․ 7 | Python,"կոդը՝
+colab.research.google.com/drive/1R4NXtQiDf_eg5y43kTYktfwb4GoEtU46?usp=sharing
+
+վարկյաններ
+00:00 ֆունկցիա, մոտիվացիոն օրինակ
+03:57 ֆունկցիաներ սկիզբ
+08:05 արգումենտով ֆունկցիաներ
+10:05 մի քանի արգումենտով ֆունկցիաներ
+29:05 default arguments
+32:35 positional/keyword arguments
+36:05 ֆակտորիալների խնդիր
+47:45 եռանկյան կառուցումը խնդիր
+01:04:35 *args
+01:19:25 **kwargs
+01:23:08 unpacking
+01:24:45 արգումենտների հերթականություն
+01:30:35 list comprehension-ների կրկնություն
+01:35:05 տնային",2025-05-26 02:38:27-07:00,[],5608,90,,https://youtube.com/watch?v=hm_H0h5ta9Q
+YshEtkolp1Q,"[2023] [14] Տնայինների քննարկում 3 - բաժիններ 24, 22 | Python","00:00 Ողջույն բոլորին
+00:52 ամենաշատ նիշ ունեցող բառի նիշերի քանակը
+19:52 24.2 list-ը վերածել tuple-ի
+25:32 24.10 set-ին տարր ավելացնել
+30:43 24.11 set-երի միավորում և հատում
+45:22 24.12 set-երի համեմատումը
+49:22 25.2 Մորզեի այբուբեն
+59:02 24.15 Pokemon քարտեր
+01:05:35 22.15 թվանշանների գումար",2025-06-22 06:09:22-07:00,[],5109,13,,https://youtube.com/watch?v=YshEtkolp1Q
+Qaz3mc7JNTU,[2023] [15] Ֆունկցիաներ 2 | Տես. 8 | Python,"կոդը՝
+colab.research.google.com/drive/1QXB9qZTX3Uuc29Pq_2AcIxwZovDYcYgN?usp=sharing
+
+Վարկյաններ
+00:00 docstrings
+13:58 type hint
+25:18 mutable arguments
+31:28 mutable arguments as defaults
+53:38 lambda 
+57:58 higher order functions
+01:10:43 map
+01:17:03 filter
+01:21:58 reduce
+01:27:38 *args, **kwargs հիշեցում
+01:36:53 տնային",2025-06-22 06:10:30-07:00,[],5948,12,,https://youtube.com/watch?v=Qaz3mc7JNTU
+Lt5BUITYNaI,"[2023] [16] Ֆունկցիաներ + zip, enumerate | Գործ 5. | Python","00:00 Ողջույն բոլորին
+01:00 zip
+15:50 enumerate
+33:20 password generator
+01:28:50 տեքստից հեռացնել թվերը
+01:39:15 bulls and cows (չորս թվերի խաղ)",2025-06-22 06:16:36-07:00,[],8864,41,,https://youtube.com/watch?v=Lt5BUITYNaI
+fxnhlAUIKsA,"[2023] [17] | Խառը - file i/o, terminal, any/all, LEGB rule | Տես. 9 | Python","colab.research.google.com/drive/1Dpj04BOr3uusZsPgvkk0zksYJAmZOZM5?usp=sharing
+
+վարկյանները ծուռ են մի քիչ
+00:00 Ողջույն բոլորին
+02:20 terminal
+23:20 file I/O
+33:15 with 
+46:20 any all
+01:01:20 LEGB rule",2025-06-22 06:18:53-07:00,[],4984,17,,https://youtube.com/watch?v=fxnhlAUIKsA
+z9dVIxK39H8,"[2023] [18] Classes, Inheritance | Տես. 10 | Python","https://colab.research.google.com/drive/1_NmujfRzzlTinRk88BC1_WLsRgAvrXpB?usp=sharing
+
+Վարկյանները մի քիչ սխալ են
+
+00:00 Ողջույն բոլորին
+06:40 class-ներ, ներածություն
+19:00 self
+53:30 instance method
+56:00 method-ը կլասից դուրս էլ աշխատի
+01:12:50 inheritance
+01:41:00 super()
+01:56:00 տնային",2025-06-22 06:25:11-07:00,[],6923,13,,https://youtube.com/watch?v=z9dVIxK39H8
+iGSmGD8_jLk,"[2023] [19] | IMDB Movies project (Classes, inheritance) | Գործ. 6 | Python","https://colab.research.google.com/drive/1Prrbqzojg_20GspzbdjE_GNVwBiRS8xB?usp=sharing
+
+Վարկյանները մի քիչ սխալ են
+00:00 Ողջույն բոլորին
+02:00 dictionary-ն դզել-փչել
+24:40 Kino class
+44:30 Kino-ին մեթոդներ ավելացնել
+57:30 Actor class
+01:48:52 Director class",2025-06-13 00:26:03-07:00,[],7411,38,,https://youtube.com/watch?v=iGSmGD8_jLk
+Iu7GGVvrsbs,"[2023] [20] Magic methods, polymorphism, PEP8, class docstring | Տես. 11 | Python","https://colab.research.google.com/drive/1Jma7RTW2eU56VwUguwQOgSaFPiO808Jp?usp=sharing
+
+Վարկյանները մի քիչ սխալ են
+00:00 ողջույն բոլորին
+01:25 սկիզբ
+10:00 str, repr
+27:08 համեմատություններ (eq, nq, lt, le, gt, ge)
+37:06 ինդեքսներ (getitem, setitem, delitem)
+43:40 in (contains)
+46:30 Polymorphism 
+52:50 isinstance, issubset
+01:08:35 class docstring
+01:12:35 PEP8 (Python Enhancement Protocol)
+01:35:50 Տնային ու հայտարարություն",2025-06-22 06:23:25-07:00,[],5649,17,,https://youtube.com/watch?v=Iu7GGVvrsbs
+6SgQl7BqeZ0,"[2023] [21] Decorators, Encapsulation | Տես. 12 | Python","Decorators`
+https://colab.research.google.com/drive/1VXxPYjDyGvPPU3mCt_W5tuV-iYMMp15R?usp=sharing
+
+Encapsulation`
+https://colab.research.google.com/drive/1q2A77TqKWG9afwdrsQkRyKtDZsilfUcb?usp=sharing
+
+Մի քիչ սխալ են վարկյանները
+00:00 ողջույն բոլորին
+01:50 decorator-ների ներածություն
+24:50 decorator-ի syntax
+28:40 decorator արժեք ընդունով ու վերադարձնող ֆունկցիաների համար
+48:00 մի քանի օրինակ
+01:01:10 functools lru cache
+01:16:00 Encapsulation ներածություն
+01:24:00 getter setter deleter
+01:08:35 Property decorator
+01:34:00 Property decorator",2025-06-22 06:21:41-07:00,[],5749,8,,https://youtube.com/watch?v=6SgQl7BqeZ0
+XyA7M0xEcb4,"[2023] [22] Abstraction, modules | Տես. 13 | Python","Abstraction`
+https://colab.research.google.com/drive/11ZgnFrhAN_mGd5uEWzPrPrIdvicJte0E?usp=sharing
+
+Modules` https://colab.research.google.com/drive/1OKcOkcG3dCBqgtIZ6AFN9OqjnMfThMVC?usp=sharing
+
+մի քիչ սխալ են վարկյանները
+00:00 ողջույն բոլորին
+00:20 պլանը էսօրվա
+00:55 Abstraction 
+42:15 OOP կրկնություն
+52:00 Modules
+01:09:25 if __name__ == ""__main__""
+01:33:40 os package
+01:39:00 time package
+01:44:53 random package
+01:50:00 Այլ package-ներ",2025-06-14 05:00:55-07:00,[],6593,10,,https://youtube.com/watch?v=XyA7M0xEcb4
+ivxoQW-8284,"[2023] [23] Ֆայլերի դասավորում/վերլուծություն պրոեկտ | Classes, OS module | Գործ․ 7 | Python","կոդը` (շուտ եմ ասել մինչև ինքնուրույն գրել փորձելը նայել չկա)
+https://colab.research.google.com/drive/1gtqDq_OJ9-RW5o2GBnuGhOo1yzk07LNW?usp=sharing
+
+Մի քիչ սխալ են լինելու վարկյանները
+00:00 ողջույն բոլորին
+06:20 __init__() constructor
+13:00 Encapsulation
+31:50 Հաշվել ֆայլերի/ֆոլդրների քանակը
+57:30 Բոլոր ֆայլերը ստանալ
+01:25:00 Ըստ տեսակի ֆայլերը ստանալ
+01:36:00 Ֆայլերի նկարագիր ըստ տեսակի
+02:10:00 Ֆայլերը բաժանել ֆոլտռների ըստ տեսակի",2025-05-30 07:18:40-07:00,[],10256,82,,https://youtube.com/watch?v=ivxoQW-8284
+7FTHrIPdZG0,[2023] [24] | Exception handling | Տես. 14 | Python,"կոդը` 
+https://colab.research.google.com/drive/1_9UtYmPVVGmnWIKdBzPYkbtTlTbd0clo?usp=sharing
+
+00:00 հարցեր
+32:30 Excetpion-ներ
+44:30 Exception as e
+53:10 else, finally
+01:06:00 raise, assert
+01:18:00 Մոտեցումներ (7 չափիր 1 կտրիր, ավելի լավա ներողություն խնդրել քանց թույլտվություն)
+01:21:00 Տոհմածառ
+01:25:00 սեփական exception-ը սարքել",2025-06-14 05:00:09-07:00,[],5482,19,,https://youtube.com/watch?v=7FTHrIPdZG0
+Pqm_OeHPKX4,"[2023] [25] Generators, Iterators, Context managers, static/class methods | Տես. 15  | Python","կոդը՝
+https://colab.research.google.com/drive/1QJFbBAscbQTPHO84gg3KDxF3rP12hePY?usp=sharing
+
+00:00 բարևներ
+08:00 generators
+29:00 iterators, iterable
+46:40 context manager
+01:09:25 static methods
+01:19:30 class methods",2025-06-14 05:00:51-07:00,[],6020,4,,https://youtube.com/watch?v=Pqm_OeHPKX4
+FKYAAikM56M,[2023] [26] NumPy | Տես. 16 | Python,"blur +
+montag - pti vor done
+
+կոդը՝
+colab.research.google.com/drive/1bKlbpQCzgFia1OZ838YaprPZK5QZJdnj?usp=sharing
+
+Մի քիչ ծուռ են
+00:00 ներածություն
+14:30 array ստեղծել
+21:30 indexing/slicing
+26:20 boolean indexing
+36:10 չափեր փոխել
+41:10 attributes
+45:00 տարբեր գործողություններ (մաթեմ, ․․․)
+48:00 ագրգացնող ֆունցկիաներ
+55:30 broadcasting
+58:25 Միավորում, տրոհում
+01:01:20 էլեմենտներ ավելացնել/հեռացնել
+01:07:15 sorting
+01:11:40 Խառը բաներ 
+01:17:40 documentation",2025-05-03 10:21:13-07:00,[],4797,50,,https://youtube.com/watch?v=FKYAAikM56M
+aFgZVLVjQAs,[2023] [27] | Pandas | Տես. 17 | Python,"կոդը՝
+https://colab.research.google.com/drive/1ZRLz0__xZNXPIeMuSjhodY02NXW4cdaZ?usp=sharing
+
+հավանաբար մի քիչ սխալ են վարկյանները
+00:00 pandas
+04:40 Series
+12:00 CSV + DataFrame
+19:30 index, column ընտրել/ջնջել
+30:30 նոր տող/սյուն ստեղծել
+38:00 DataFrame attibutes
+41:20 boolean masking
+52:10 groupby
+01:00:00 missing values
+01:10:00 rename/replace
+01:15:00 save անել
+01:39:50 pivot table",2025-06-14 05:00:00-07:00,[],7549,38,,https://youtube.com/watch?v=aFgZVLVjQAs
+QblVNamFzkA,[2023] [28] | Matplotlib/Plotly + Streamlit | Տես․ 18 | Python,"Matplotlib/Plotly`
+https://colab.research.google.com/drive/1zojU2N6W_xUqldO4abY0htnx8tAsvn4L?usp=sharing
+
+Streamlit`
+https://colab.research.google.com/drive/1LzvjHFCbMdHbcGmH64gJGsWY2Mt3e9Ed?usp=sharing
+
+Հավանաբար մի քիչ սխալ են վարկյանները
+00:00 Matplotlib
+01:55 Basic plots
+09:00 Customizing plots
+16:50 Subplots
+25:50 Plotly
+01:04:00 Streamlit",2025-06-14 05:00:45-07:00,[],4303,31,,https://youtube.com/watch?v=QblVNamFzkA
+-HC6RJ6cNT0,[2023] [29] | Ընտրողների տվյալների հետ կապված պրոեկտ | Տես. 19 | Python,"https://hayktarkhanyan-election-names-app-v6idvt.streamlit.app/
+
+conda-ի հրամաններ՝ https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
+
+timestamp-երը մի քիչ սխալ են դեռ
+
+00:00 Ողջույն բոլորին
+12:50 Սկիզբ - GitHub
+18:00 virtual environment (conda)
+30:00 Պրոեկտի սկիզբ
+02:09:00 Deploying (Streamlit)
+
+Montag - ToDo",2025-06-14 05:00:01-07:00,[],8013,40,,https://youtube.com/watch?v=-HC6RJ6cNT0
+H6UN4S1Fbds,"[2023] [30] | Խառը գրադարաններ(numba, argparse, joblib, unittest, logging, beautiful soup) | Տես. 20","Quotes to scrape - http://quotes.toscrape.com/
+
+1. numba - [video](https://www.youtube.com/watch?v=bZ5G-RZoE6Q) - [docs](https://numba.pydata.org/)
+2. argparse - [video](https://www.youtube.com/watch?v=aGy7U5ItLRk) - [docs](https://docs.python.org/3/library/argparse.html)
+3. joblib - [video](https://www.youtube.com/watch?v=Dm4up8_zJdo) - [docs](https://joblib.readthedocs.io/en/stable/)
+4. logging - [video basics](https://www.youtube.com/watch?v=-ARI4Cz-awo) - [video advanced](https://www.youtube.com/watch?v=jxmzY9soFXg) - [docs](https://docs.python.org/3/library/logging.html)
+5. unittest - [video](https://www.youtube.com/watch?v=6tNS--WetLI) - [docs](https://docs.python.org/3/library/unittest.html)
+6. beautiful soup - [video](https://www.youtube.com/watch?v=ng2o98k983k) - [docs](https://beautiful-soup-4.readthedocs.io/en/latest/) - [sample webpage](http://quotes.toscrape.com/)
+
+
+00:00 Ողջույն բոլորին
+01:20 pandas profiling
+09:20 joblib
+14:02 numba
+26:02 logging
+49:20 unittest
+01:03:50 beautifulsoup
+01:21:00 argparse",2025-06-14 05:00:24-07:00,[],5240,19,,https://youtube.com/watch?v=H6UN4S1Fbds
