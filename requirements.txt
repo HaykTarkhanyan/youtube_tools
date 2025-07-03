@@ -9,3 +9,4 @@ anthropic==0.55.0
 pandas==2.3.0
 openpyxl==3.1.5
 google-api-python-client==
+wordcloud==1.9.4
