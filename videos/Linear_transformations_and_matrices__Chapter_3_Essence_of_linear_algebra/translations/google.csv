@@ -1,0 +1,158 @@
+index,time_range,text,google_translate
+1,"00:00:12,040 --> 00:00:12,920",Hey everyone!,Հե
+2,"00:00:13,320 --> 00:00:16,276",If I had to choose just one topic that makes all of the others in,"Եթե ​​ես ստիպված լինեի ընտրել ընդամենը մեկ թեմա, որը բոլոր մյուսներին ստիպում է"
+3,"00:00:16,276 --> 00:00:19,233","linear algebra start to click, and which too often goes unlearned","Գծային հանրահաշիվը սկսում է սեղմել, եւ որը շատ հաճախ է հաճախակի չսովորում"
+4,"00:00:19,233 --> 00:00:22,280","the first time a student takes linear algebra, it would be this one.","Առաջին անգամ ուսանողը տանում է գծային հանրահաշիվ, դա կլինի այս մեկը:"
+5,"00:00:22,700 --> 00:00:26,200",The idea of a linear transformation and its relation to matrices.,Գծային վերափոխման գաղափարը եւ դրա առնչությունը մատրիցների հետ:
+6,"00:00:26,950 --> 00:00:30,981","For this video, I'm just going to focus on what these transformations look like in the","Այս տեսանյութի համար ես պարզապես պատրաստվում եմ կենտրոնանալ այն բանի վրա, թե ինչպիսին են այս վերափոխումները"
+7,"00:00:30,981 --> 00:00:35,060","case of two dimensions, and how they relate to the idea of matrix vector multiplication.",Երկու հարթությունների դեպք եւ ինչպես են դրանք վերաբերում մատրիցային վեկտորի բազմապատկման գաղափարին:
+8,"00:00:35,880 --> 00:00:39,137","In particular, I want to show you a way to think about matrix","Մասնավորապես, ես ուզում եմ ձեզ ցույց տալ մի ձեւ Մատրիցայի մասին"
+9,"00:00:39,137 --> 00:00:42,080",vector multiplication that doesn't rely on memorization.,"Վեկտորի բազմապատկում, որը չի ապավինում անգիր:"
+10,"00:00:43,160 --> 00:00:46,580","To start, let's just parse this term, linear transformation.","Սկսելու համար եկեք պարզապես վերլուծենք այս տերմինը, գծային վերափոխումը:"
+11,"00:00:47,420 --> 00:00:49,880",Transformation is essentially a fancy word for function.,"Փոխակերպումը, ըստ էության, ֆանտաստիկ բառ է գործառույթի համար:"
+12,"00:00:50,260 --> 00:00:53,980",It's something that takes in inputs and spits out an output for each one.,"Դա մի բան է, որը տեւում է մուտքերը եւ յուրաքանչյուրի համար արտահանում է ելք:"
+13,"00:00:53,980 --> 00:00:56,414","Specifically, in the context of linear algebra,","Մասնավորապես, գծային հանրահաշվի համատեքստում,"
+14,"00:00:56,414 --> 00:00:59,862",we like to think about transformations that take in some vector and,Մենք սիրում ենք մտածել որոշ վեկտորի մեջ վերցրած վերափոխումների մասին եւ
+15,"00:00:59,862 --> 00:01:01,080",spit out another vector.,թքել մեկ այլ վեկտոր:
+16,"00:01:02,500 --> 00:01:06,380",So why use the word transformation instead of function if they mean the same thing?,"Ուրեմն ինչու գործառույթի փոխարեն օգտագործեք բառի վերափոխումը, եթե նրանք նկատի ունենան նույնը:"
+17,"00:01:07,120 --> 00:01:11,340","Well, it's to be suggestive of a certain way to visualize this input-output relation.","Դե, դա պետք է առաջարկվի այս մուտքի ելքային այս կապը պատկերացնելու որոշակի եղանակով:"
+18,"00:01:11,860 --> 00:01:15,800","You see, a great way to understand functions of vectors is to use movement.","Տեսնում եք, վեկտորների գործառույթները հասկանալու հիանալի միջոց է շարժումը օգտագործելն է:"
+19,"00:01:16,780 --> 00:01:20,976","If a transformation takes some input vector to some output vector,","Եթե ​​վերափոխումը որոշ ելքային վեկտորի որոշ մուտքային վեկտոր է վերցնում,"
+20,"00:01:20,976 --> 00:01:24,860",we imagine that input vector moving over to the output vector.,"Մենք պատկերացնում ենք, որ մուտքային վեկտորը տեղափոխվում է ելքային վեկտոր:"
+21,"00:01:25,680 --> 00:01:28,498","Then to understand the transformation as a whole,","Այնուհետեւ հասկանալ վերափոխումը որպես ամբողջություն,"
+22,"00:01:28,498 --> 00:01:32,501",we might imagine watching every possible input vector move over to its,"Մենք պատկերացնում ենք, որ դիտում ենք, որ մուտքային յուրաքանչյուր վեկտորը տեղափոխվի դրա"
+23,"00:01:32,501 --> 00:01:34,080",corresponding output vector.,Համապատասխան ելքային վեկտոր:
+24,"00:01:34,980 --> 00:01:38,164","It gets really crowded to think about all of the vectors all at once,","Այն իսկապես մարդաշատ է դառնում, որպեսզի միանգամից մտածեք բոլոր վեկտորների մասին,"
+25,"00:01:38,164 --> 00:01:39,120",each one as an arrow.,յուրաքանչյուրը որպես սլաք:
+26,"00:01:39,500 --> 00:01:43,625","So as I mentioned last video, a nice trick is to conceptualize each vector","Այսպիսով, երբ ես նշեցի վերջին տեսահոլովակը, հաճելի հնարք է յուրաքանչյուր վեկտորի հայեցակարգել"
+27,"00:01:43,625 --> 00:01:47,420","not as an arrow, but as a single point, the point where its tip sits.","Ոչ թե որպես սլաք, բայց որպես մեկ կետ, այն կետը, երբ դրա հուշում է:"
+28,"00:01:48,030 --> 00:01:52,105","That way, to think about a transformation taking every possible input vector","Այդ կերպ, մտածել վերափոխման մասին, որն ընդունում է յուրաքանչյուր հնարավոր մուտքային վեկտոր"
+29,"00:01:52,105 --> 00:01:56,340","to some output vector, we watch every point in space moving to some other point.","Որոշ ելքային վեկտորի համար մենք դիտում ենք ամեն կետ տարածության մեջ, որը տեղափոխվում է մի այլ կետ:"
+30,"00:01:57,220 --> 00:01:59,665","In the case of transformations in two dimensions,","Երկու հարթություններում վերափոխումների դեպքում,"
+31,"00:01:59,665 --> 00:02:02,796","to get a better feel for the whole shape of the transformation,",վերափոխման ամբողջ ձեւի ավելի լավ զգալու համար
+32,"00:02:02,796 --> 00:02:05,780",I like to do this with all of the points on an infinite grid.,Ես սիրում եմ դա անել անսահման ցանցի բոլոր կետերով:
+33,"00:02:06,560 --> 00:02:09,445","I also sometimes like to keep a copy of the grid in the background,","Ես երբեմն սիրում եմ ֆոնին պահել ցանցի պատճենը,"
+34,"00:02:09,445 --> 00:02:12,840",just to help keep track of where everything ends up relative to where it starts.,"Պարզապես օգնելու համար հետեւել, թե որտեղն ամեն ինչ ավարտվում է, որտեղ այն սկսվում է:"
+35,"00:02:14,460 --> 00:02:19,295","The effect for various transformations moving around all of the points in space is,","Տարածության բոլոր կետերի շուրջ շարժվող տարբեր վերափոխումների համար ազդեցությունը,"
+36,"00:02:19,295 --> 00:02:21,080","you've got to admit, beautiful.","Դուք պետք է ընդունեք, գեղեցիկ:"
+37,"00:02:21,880 --> 00:02:24,640",It gives the feeling of squishing and morphing space itself.,Այն ինքնին տալիս է բռնի եւ ձեւավորվող տարածքի զգացողություն:
+38,"00:02:25,600 --> 00:02:29,920","As you can imagine though, arbitrary transformations can look pretty complicated.","Ինչպես պատկերացնում եք, սակայն կամայական վերափոխումները կարող են բավականին բարդ տեսք ունենալ:"
+39,"00:02:30,380 --> 00:02:34,684","But luckily, linear algebra limits itself to a special type of transformation,","Բայց, բարեբախտաբար, գծային հանրահաշիվը սահմանափակում է հատուկ տիպի վերափոխման,"
+40,"00:02:34,684 --> 00:02:38,280","ones that are easier to understand, called linear transformations.","նրանք, որոնք ավելի հեշտ են հասկանալ, կոչվում են գծային վերափոխումներ:"
+41,"00:02:39,120 --> 00:02:43,060","Visually speaking, a transformation is linear if it has two properties.","Տեսողականորեն ասելով, վերափոխումը գծային է, եթե այն ունի երկու հատկություն:"
+42,"00:02:43,700 --> 00:02:46,963","All lines must remain lines without getting curved,","Բոլոր տողերը պետք է մնան տողեր, առանց կոր լինելու,"
+43,"00:02:46,963 --> 00:02:49,600",and the origin must remain fixed in place.,Եվ ծագումը պետք է մնա ֆիքսված տեղում:
+44,"00:02:50,620 --> 00:02:54,018","For example, this right here would not be a linear transformation,","Օրինակ, այս իրավունքը այստեղ գծային վերափոխում չէր լինի,"
+45,"00:02:54,018 --> 00:02:55,540",since the lines get all curvy.,Քանի որ տողերը գնում են բոլոր գանգուրները:
+46,"00:02:56,100 --> 00:02:59,050","And this one right here, although it keeps the lines straight,","Եվ սա հենց այստեղ է, չնայած այն ուղիղ պահում է տողերը,"
+47,"00:02:59,050 --> 00:03:01,860","is not a linear transformation, because it moves the origin.","գծային վերափոխում չէ, քանի որ այն տեղափոխում է ծագումը:"
+48,"00:03:02,680 --> 00:03:05,960","This one here fixes the origin, and it might look like it keeps lines straight,","Այս մեկը այստեղ ամրագրում է ծագումը, եւ դա կարող է լինել, որ այն ուղիղ պահեր է պահում,"
+49,"00:03:05,960 --> 00:03:09,240",but that's just because I'm only showing the horizontal and vertical grid lines.,"Բայց դա պարզապես այն պատճառով է, որ ես միայն ցույց եմ տալիս հորիզոնական եւ ուղղահայաց ցանցերը:"
+50,"00:03:09,540 --> 00:03:12,407","When you see what it does to a diagonal line, it becomes clear","Երբ տեսնում ես, թե ինչ է անում անկյունագծային գծի համար, պարզ է դառնում"
+51,"00:03:12,407 --> 00:03:15,320","that it's not at all linear, since it turns that line all curvy.","որ դա ամենեւին գծային չէ, քանի որ այն շրջվում է, բոլորը curvy:"
+52,"00:03:16,760 --> 00:03:19,658","In general, you should think of linear transformations","Ընդհանրապես, դուք պետք է մտածեք գծային վերափոխումների մասին"
+53,"00:03:19,658 --> 00:03:22,240",as keeping grid lines parallel and evenly spaced.,որպես ցանցային գծեր զուգահեռ եւ հավասարաչափ տարածված պահելով:
+54,"00:03:23,400 --> 00:03:27,540","Some linear transformations are simple to think about, like rotations about the origin.","Մի քանի գծային վերափոխումներ պարզ են մտածելու մասին, ինչպես ծագման մասին պտույտները:"
+55,"00:03:28,120 --> 00:03:30,600",Others are a little trickier to describe with words.,Մյուսները մի փոքր բարդ են բառերով նկարագրելու համար:
+56,"00:03:32,040 --> 00:03:35,480","So, how do you think you could describe these transformations numerically?","Այսպիսով, ինչպես եք կարծում, որ այս վերափոխումները թվայնորեն նկարագրում եք:"
+57,"00:03:35,480 --> 00:03:39,654","If you were, say, programming some animations to make a video teaching the topic,","Եթե ​​դուք լինեիք, ասեք, ծրագրավորելով որոշ անիմացիաներ `թեման դասավանդելու տեսանյութեր,"
+58,"00:03:39,654 --> 00:03:44,236","what formula do you give the computer so that if you give it the coordinates of a vector,","Ինչ բանաձեւ եք տալիս համակարգիչը այնպես, որ եթե այն դնեք վեկտորի կոորդինատները,"
+59,"00:03:44,236 --> 00:03:47,240",it can give you the coordinates of where that vector lands?,"Դա կարող է ձեզ տալ այն կոորդինատները, թե որտեղ են այդ վեկտորային հողերը:"
+60,"00:03:48,480 --> 00:03:52,568","It turns out that you only need to record where the two basis vectors,","Ստացվում է, որ ձեզ հարկավոր է միայն արձանագրել, թե որտեղ է գտնվում երկու հիմնական վեկտորները,"
+61,"00:03:52,568 --> 00:03:56,600","i-hat and j-hat, each land, and everything else will follow from that.","i-hat and j-hat, յուրաքանչյուր երկիր եւ մնացած ամեն ինչ դրանից կհետեւի:"
+62,"00:03:57,500 --> 00:04:01,662","For example, consider the vector v with coordinates negative 1, 2,","Օրինակ, հաշվի առեք վեկտոր v- ն կոորդինատների բացասական 1, 2,"
+63,"00:04:01,662 --> 00:04:05,700",meaning that it equals negative 1 times i-hat plus 2 times j-hat.,"Նշանակում է, որ այն հավասար է բացասական 1 անգամ i-hat plus 2 անգամ J-HAT:"
+64,"00:04:08,680 --> 00:04:12,973","If we play some transformation and follow where all three of these vectors go,","Եթե ​​մենք խաղում ենք որոշակի վերափոխում եւ հետեւում ենք, որտեղ գնում են այս բոլոր երեք վեկտորները,"
+65,"00:04:12,973 --> 00:04:17,647",the property that grid lines remain parallel and evenly spaced has a really important,"Այն գույքը, որը ցանցային տողերը մնում են զուգահեռ եւ հավասարաչափ տարածված, ունի իսկապես կարեւոր"
+66,"00:04:17,647 --> 00:04:18,300",consequence.,հետեւանք:
+67,"00:04:19,100 --> 00:04:22,198",The place where v lands will be negative 1 times the vector,"Այն վայրը, որտեղ v հողերը բացասական կլինեն 1 անգամ վեկտոր"
+68,"00:04:22,198 --> 00:04:25,400",where i-hat landed plus 2 times the vector where j-hat landed.,"Որտեղ i-hat landed plus 2 անգամ այն ​​վեկտորը, որտեղ J-Hat Landed."
+69,"00:04:25,980 --> 00:04:30,332","In other words, it started off as a certain linear combination of i-hat and j-hat,","Այլ կերպ ասած, այն սկսվեց որպես i-hat- ի եւ J-HAT- ի որոշակի գծային համադրություն"
+70,"00:04:30,332 --> 00:04:34,580",and it ends up as that same linear combination of where those two vectors landed.,"Եվ այն ավարտվում է որպես նույն գծային համադրություն, որտեղ վայրէջք են կատարել այդ երկու վեկտորները:"
+71,"00:04:35,620 --> 00:04:40,920",This means you can deduce where v must go based only on where i-hat and j-hat each land.,"Սա նշանակում է, որ դուք կարող եք հանգեցնել, թե որտեղ v- ն պետք է հիմնված լինի միայն այն դեպքում, երբ ես յուրաքանչյուր երկիր եմ:"
+72,"00:04:41,580 --> 00:04:44,540",This is why I like keeping a copy of the original grid in the background.,Ահա թե ինչու ես սիրում եմ ֆոնին պահպանել բնօրինակ ցանցի պատճենը:
+73,"00:04:45,080 --> 00:04:50,591","For the transformation shown here, we can read off that i-hat lands on the coordinates 1,","Այստեղ ցուցադրված վերափոխման համար մենք կարող ենք կարդալ այն, որ i-hat lands- ը կոորդինատների վրա 1,"
+74,"00:04:50,591 --> 00:04:54,940","negative 2, and j-hat lands on the x-axis over at the coordinates 3, 0.","Բացասական 2, իսկ J-HAT LENTS- ը X- առանցքի վրա `3, 0 կոորդինատներում:"
+75,"00:04:55,540 --> 00:05:00,707",This means that the vector represented by negative 1 i-hat plus 2 times j-hat,"Սա նշանակում է, որ վեկտորը ներկայացված է բացասական 1 I-Hat Plus 2 անգամ J-HAT- ով"
+76,"00:05:00,707 --> 00:05:06,140","ends up at negative 1 times the vector 1, negative 2 plus 2 times the vector 3, 0.","Ավարտվում է բացասական 1 անգամ վեկտոր 1, բացասական 2 գումարած 2 անգամ վեկտոր 3, 0:"
+77,"00:05:07,100 --> 00:05:11,680","Adding that all together, you can deduce that it has to land on the vector 5, 2.","Բոլորը միասին ավելացնելով, կարող եք եզրակացնել, որ այն պետք է վայրէջք կատարի 5-րդ վեկտորի վրա:"
+78,"00:05:14,260 --> 00:05:17,240","This is a good point to pause and ponder, because it's pretty important.","Սա լավ կետ է դադար տալու եւ խորհելու համար, քանի որ դա բավականին կարեւոր է:"
+79,"00:05:18,520 --> 00:05:21,900","Now, given that I'm actually showing you the full transformation,","Այժմ, հաշվի առնելով, որ ես իրականում ցույց եմ տալիս ձեզ ամբողջական վերափոխումը,"
+80,"00:05:21,900 --> 00:05:25,280","you could have just looked to see that v has the coordinates 5, 2.","Դուք պարզապես կարող եք փնտրել, տեսնելու, որ v- ն ունի 5, 2 կոորդինատներ:"
+81,"00:05:25,760 --> 00:05:29,576",But the cool part here is that this gives us a technique to deduce,"Բայց այստեղ զով հատվածն այն է, որ սա մեզ տալիս է տեխնիկա `հանելու համար"
+82,"00:05:29,576 --> 00:05:33,335",where any vectors land so long as we have a record of where i-hat,"որտեղ ցանկացած վեկտորներ վայրէջք են կատարում այնքան ժամանակ, երբ մենք ունենք գրառում, թե որտեղ եմ գլխարկը"
+83,"00:05:33,335 --> 00:05:37,380",and j-hat each land without needing to watch the transformation itself.,"եւ J-HAD- ը յուրաքանչյուր երկիր է, առանց կարիք ունենալու դիտել այդ վերափոխումը:"
+84,"00:05:38,600 --> 00:05:42,442","Write the vector with more general coordinates, x and y,","Գրեք վեկտորը ավելի ընդհանուր կոորդինատներով, x եւ y,"
+85,"00:05:42,442 --> 00:05:47,364","and it will land on x times the vector where i-hat lands, 1, negative 2,","եւ դա վայրէջք կկատարի վեկտորի վրա, որտեղ i-hat հողերը, 1, բացասական 2,"
+86,"00:05:47,364 --> 00:05:50,600","plus y times the vector where j-hat lands, 3, 0.","գումարած y անգամ վեկտորը, որտեղ J-Hat Lands, 3, 0."
+87,"00:05:51,860 --> 00:05:58,100","Carrying out that sum, you see that it lands at 1x plus 3y, negative 2x plus 0y.","Այս գումարը իրականացնելով, տեսնում եք, որ այն վայրէջք է կատարում 1x գումարած 3Y, բացասական 2x գումարած 0Y:"
+88,"00:05:58,740 --> 00:06:03,580","I give you any vector, and you can tell me where that vector lands using this formula.","Ես ձեզ ցանկացած վեկտոր եմ տալիս, եւ դուք կարող եք ինձ ասել, թե որտեղ է այդ վեկտորային հողերը օգտագործում այս բանաձեւը:"
+89,"00:06:04,860 --> 00:06:09,037",What all of this is saying is that a two-dimensional linear transformation,"Այս ամենը ասում է, որ երկկողմանի գծային վերափոխում է"
+90,"00:06:09,037 --> 00:06:12,935","is completely described by just four numbers, the two coordinates for","ամբողջովին նկարագրված է ընդամենը չորս թվով, երկու կոորդինատները"
+91,"00:06:12,935 --> 00:06:16,500",where i-hat lands and the two coordinates for where j-hat lands.,"որտեղ ես ունեմ հողեր եւ երկու կոորդինատներ, որոնց համար J-Hat Lands:"
+92,"00:06:17,080 --> 00:06:17,640",Isn't that cool?,Արդյոք դա զով չէ:
+93,"00:06:18,380 --> 00:06:23,826","It's common to package these coordinates into a 2x2 grid of numbers called a 2x2 matrix,","Սովորական է փաթեթավորել այս կոորդինատները 2x2 Matrix կոչվող համարների 2x2 ցանցի մեջ,"
+94,"00:06:23,826 --> 00:06:27,681",where you can interpret the columns as the two special vectors,որտեղ կարող եք մեկնաբանել սյուները որպես երկու հատուկ վեկտոր
+95,"00:06:27,681 --> 00:06:29,640",where i-hat and j-hat each land.,որտեղ ես-գլխարկ եւ J-HAT յուրաքանչյուր երկիր:
+96,"00:06:30,380 --> 00:06:35,536","If you're given a 2x2 matrix describing a linear transformation and some specific vector,","Եթե ​​ձեզ տրվում է 2x2 մատրից, որը նկարագրում է գծային վերափոխումը եւ որոշակի որոշակի վեկտոր,"
+97,"00:06:35,536 --> 00:06:39,719","and you want to know where that linear transformation takes that vector,","Եվ դուք ուզում եք իմանալ, թե որտեղ է այդ գծային վերափոխումը տեւում այդ վեկտորը,"
+98,"00:06:39,719 --> 00:06:44,245","you can take the coordinates of the vector, multiply them by the corresponding","Դուք կարող եք վերցնել վեկտորի կոորդինատները, դրանք բազմապատկել համապատասխան"
+99,"00:06:44,245 --> 00:06:47,340","columns of the matrix, then add together what you get.","Matrix- ի սյուները, ապա միասին ավելացրեք ձեր ստացածը:"
+100,"00:06:48,180 --> 00:06:52,720",This corresponds with the idea of adding the scaled versions of our new basis vectors.,Սա համապատասխանում է մեր նոր հիմքերի վեկտորների մասշտաբային տարբերակները ավելացնելու գաղափարին:
+101,"00:06:54,720 --> 00:06:58,105","Let's see what this looks like in the most general case,","Տեսնենք, թե որն է դա ամենատարածված գործի մեջ,"
+102,"00:06:58,105 --> 00:07:00,540","where your matrix has entries A, B, C, D.","Որտեղ ձեր մատրիցը ունի գրառում A, B, C, D."
+103,"00:07:01,100 --> 00:07:03,715","And remember, this matrix is just a way of packaging the","Եվ հիշեք, այս մատրիցը պարզապես փաթեթավորման միջոց է"
+104,"00:07:03,715 --> 00:07:06,240",information needed to describe a linear transformation.,Գծային վերափոխում նկարագրելու համար անհրաժեշտ տեղեկատվություն:
+105,"00:07:06,240 --> 00:07:09,219","Always remember to interpret that first column, AC,","Միշտ հիշեք, որ մեկնաբանում է այդ առաջին սյունը, AC,"
+106,"00:07:09,219 --> 00:07:13,632","as the place where the first basis vector lands, and that second column, BD,","Որպես տեղ, որտեղ առաջին հիմքը վեկտորային հողերը, եւ այդ երկրորդ սյունը, BD,"
+107,"00:07:13,632 --> 00:07:16,440",as the place where the second basis vector lands.,"որպես տեղ, որտեղ երկրորդ հիմքը վեկտորային հողերը:"
+108,"00:07:17,500 --> 00:07:21,000","When we apply this transformation to some vector xy, what do you get?","Երբ մենք օգտագործում ենք այս վերափոխումը որոշ վեկտոր XY- ին, ինչ եք ստանում:"
+109,"00:07:22,060 --> 00:07:26,980","Well, it'll be x times AC plus y times BD.","Դե, դա կլինի X Times AC Plus Y Times BD:"
+110,"00:07:28,060 --> 00:07:33,300","Putting this together, you get a vector Ax plus By, Cx plus Dy.","Այս միասին դնելը, դուք ստանում եք վեկտոր կացին գումարած, CX Plus DY- ն:"
+111,"00:07:33,980 --> 00:07:37,167","You could even define this as matrix vector multiplication,","Դուք նույնիսկ կարող եք դա սահմանել որպես Matrix վեկտորի բազմապատկում,"
+112,"00:07:37,167 --> 00:07:40,940",when you put the matrix on the left of the vector like it's a function.,"Երբ մատրիցը դնում եք վեկտորի ձախ կողմում, ինչպես դա գործառույթ է:"
+113,"00:07:41,660 --> 00:07:44,118","Then, you could make high schoolers memorize this without","Հետո, դուք կարող եք բարձրադասական դպրոցներ դարձնել անգիր դա առանց"
+114,"00:07:44,118 --> 00:07:46,620",showing them the crucial part that makes it feel intuitive.,"Նրանց ցույց տալով այն վճռական մասը, որը դարձնում է ինտուիտիվ զգալ:"
+115,"00:07:48,300 --> 00:07:51,331","But, isn't it more fun to think about these columns as the","Բայց, ավելի հաճելի չէ այս սյուների մասին մտածելը որպես"
+116,"00:07:51,331 --> 00:07:54,568","transformed versions of your basis vectors, and to think about",վերափոխել ձեր հիմքի վեկտորների տարբերակները եւ մտածել դրա մասին
+117,"00:07:54,568 --> 00:07:57,960",the result as the appropriate linear combination of those vectors?,"Արդյունքը, որպես այդ վեկտորների համապատասխան գծային համադրություն:"
+118,"00:08:00,720 --> 00:08:03,780",Let's practice describing a few linear transformations with matrices.,Եկեք մարզվենք նկարագրելով մի քանի գծային վերափոխումներ `մատրիցներով:
+119,"00:08:04,580 --> 00:08:09,358","For example, if we rotate all of space 90 degrees counterclockwise,","Օրինակ, եթե մենք պտտվում ենք ամբողջ տարածքը 90 աստիճանի հակառակ ուղղությամբ,"
+120,"00:08:09,358 --> 00:08:12,240","then i-hat lands on the coordinates 0, 1.","Այնուհետեւ i-hat հողերը համակարգում են 0, 1:"
+121,"00:08:13,980 --> 00:08:17,180","And j-hat lands on the coordinates negative 1, 0.","Եւ j-hat հողերը կոորդինատների վրա բացասական 1, 0:"
+122,"00:08:17,980 --> 00:08:21,960","So the matrix we end up with has columns 0, 1, negative 1, 0.","Այսպիսով, Matrix- ը, որի հետ մենք ավարտվում ենք, ունի սյուներ 0, 1, բացասական 1, 0:"
+123,"00:08:22,880 --> 00:08:26,630","To figure out what happens to any vector after a 90-degree rotation,","Պարզել, թե ինչ է տեղի ունենում 90 աստիճանի ռոտացիայից հետո ցանկացած վեկտորի հետ,"
+124,"00:08:26,630 --> 00:08:29,620",you could just multiply its coordinates by this matrix.,Դուք պարզապես կարող եք բազմապատկել դրա կոորդինատները այս մատրիցով:
+125,"00:08:31,560 --> 00:08:34,299","Here's a fun transformation with a special name, called a shear.","Ահա մի զվարճալի վերափոխում հատուկ անունով, որը կոչվում է կտրվածք:"
+126,"00:08:35,000 --> 00:08:39,159","In it, i-hat remains fixed, so the first column of the matrix is 1, 0.","Դրանում ես, գլխարկը մնում է ֆիքսված, այնպես որ մատրիցայի առաջին սյունը 1, 0 է:"
+127,"00:08:39,600 --> 00:08:42,481","But j-hat moves over to the coordinates 1, 1,","Բայց J-HAT- ը տեղափոխվում է 1, 1, 1, 1,"
+128,"00:08:42,481 --> 00:08:45,300",which become the second column of the matrix.,որոնք դառնում են մատրիցայի երկրորդ սյունը:
+129,"00:08:45,300 --> 00:08:49,962","And at the risk of being redundant here, figuring out how a shear transforms","Եւ այստեղ ավելորդ լինելու ռիսկի հետեւանքով պարզելով, թե ինչպես է կտրուկ վերափոխվում"
+130,"00:08:49,962 --> 00:08:54,080",a given vector comes down to multiplying this matrix by that vector.,Այս վեկտորի կողմից այս մատրիցը բազմապատկելու համար տվյալ վեկտորը իջնում ​​է:
+131,"00:08:55,760 --> 00:08:59,616","Let's say we want to go the other way around, starting with a matrix,","Եկեք ասենք, որ մենք ուզում ենք շրջել մյուս ճանապարհը, սկսած մատրիցից,"
+132,"00:08:59,616 --> 00:09:04,520","say with columns 1, 2 and 3, 1, and we want to deduce what its transformation looks like.","Ասեք 1, 2 եւ 3, 1 սյուներով, եւ մենք ուզում ենք եզրակացնել, թե ինչպիսին է դրա վերափոխումը:"
+133,"00:09:04,960 --> 00:09:07,440",Pause and take a moment to see if you can imagine it.,"Դադարեցրեք եւ մի պահ տեսնեք, արդյոք դուք կարող եք պատկերացնել այն:"
+134,"00:09:08,420 --> 00:09:15,100","One way to do this is to first move i-hat to 1, 2, then move j-hat to 3, 1.","Դա անելու մեկ եղանակ է առաջին հերթին i-hat- ը տեղափոխել 1, 2, այնուհետեւ J-HAD- ը տեղափոխել 3, 1:"
+135,"00:09:15,100 --> 00:09:17,605",Always moving the rest of space in such a way,Միշտ մնացած տարածքը նման ձեւով տեղափոխելով
+136,"00:09:17,605 --> 00:09:20,220",that keeps gridlines parallel and evenly spaced.,որը պահում է gridlines զուգահեռ եւ հավասարաչափ տարածված:
+137,"00:09:21,680 --> 00:09:26,228","If the vectors that i-hat and j-hat land on are linearly dependent, which,","Եթե ​​վեկտորները, որոնք i-hat and j-hat Land On On- ը, գծայինորեն կախված են, ինչը"
+138,"00:09:26,228 --> 00:09:31,079","if you recall from last video, means that one is a scaled version of the other,","Եթե ​​հիշում եք վերջին տեսանյութից, նշանակում է, որ մեկը մյուսի մասշտաբային տարբերակն է,"
+139,"00:09:31,079 --> 00:09:36,234",it means that the linear transformation squishes all of 2D space onto the line where,"Դա նշանակում է, որ գծային վերափոխումը ջախջախում է բոլոր 2D տարածքը այն գծի վրա, որտեղ"
+140,"00:09:36,234 --> 00:09:41,328","those two vectors sit, also known as the one-dimensional span of those two linearly","Այդ երկու վեկտորները նստում են, ինչպես նաեւ հայտնի են որպես այդ երկու գծային միակողմանի տող"
+141,"00:09:41,328 --> 00:09:42,420",dependent vectors.,Կախված վեկտորներ:
+142,"00:09:44,420 --> 00:09:48,910","To sum up, linear transformations are a way to move around space such that",Ամփոփելու համար գծային վերափոխումները տեղ են տվել այդպիսի տարածության մեջ
+143,"00:09:48,910 --> 00:09:53,940","gridlines remain parallel and evenly spaced, and such that the origin remains fixed.","Gridlines- ը մնում է զուգահեռ եւ հավասարաչափ տարածված, եւ այնպիսի ծագումը, որ ծագում է ֆիքսված:"
+144,"00:09:54,540 --> 00:09:58,992","Delightfully, these transformations can be described using only a handful of numbers,","Ուրախալիորեն, այս վերափոխումները կարելի է նկարագրել օգտագործելով միայն մի բուռ թվեր,"
+145,"00:09:58,992 --> 00:10:01,530",the coordinates of where each basis vector lands.,"այն կոորդինատները, որտեղ յուրաքանչյուր հիմքի վեկտորային հողեր:"
+146,"00:10:02,760 --> 00:10:06,230","Matrices give us a language to describe these transformations,","Մատրիցսը մեզ լեզու է տալիս այս վերափոխումները նկարագրելու համար,"
+147,"00:10:06,230 --> 00:10:08,820","where the columns represent those coordinates,","որտեղ սյուները ներկայացնում են այդ կոորդինատները,"
+148,"00:10:08,820 --> 00:10:12,566",and matrix-vector multiplication is just a way to compute what that,"իսկ մատրիցա-վեկտորի բազմապատկումը պարզապես միջոց է այն բանի համար, որ դա է"
+149,"00:10:12,566 --> 00:10:14,660",transformation does to a given vector.,Փոխակերպումը վերաբերում է տվյալ վեկտորի:
+150,"00:10:15,360 --> 00:10:18,805","The important takeaway here is that every time you see a matrix,","Այստեղ կարեւոր Takeaway- ն այն է, որ ամեն անգամ մատրիցա տեսնելիս"
+151,"00:10:18,805 --> 00:10:21,880",you can interpret it as a certain transformation of space.,Դուք կարող եք դա մեկնաբանել որպես տարածության որոշակի վերափոխում:
+152,"00:10:22,580 --> 00:10:24,827","Once you really digest this idea, you're in a","Երբ իսկապես մարսես այս գաղափարը, դու ա"
+153,"00:10:24,827 --> 00:10:27,320",great position to understand linear algebra deeply.,Հիանալի դիրքորոշում `գծային հանրահաշիվը խորը հասկանալու համար:
+154,"00:10:27,660 --> 00:10:32,287","Almost all of the topics coming up, from matrix multiplication to determinants,","Գրեթե բոլոր թեմաները, որոնք գալիս են Matrix- ի բազմապատկում որոշիչներին,"
+155,"00:10:32,287 --> 00:10:36,684","change of basis, eigenvalues, all of these will become easier to understand","Հիմքի փոփոխություն, eigenvalues, այս բոլորը ավելի հեշտ կդառնան հասկանալ"
+156,"00:10:36,684 --> 00:10:40,560",once you start thinking about matrices as transformations of space.,"Երբ սկսեք մտածել մատրիցաների մասին, որպես տարածության վերափոխումներ:"
+157,"00:10:41,300 --> 00:10:43,560","Most immediately, in the next video, I'll be talking about","Անմիջապես հետո, հաջորդ տեսանյութում ես կխոսեմ"
