@@ -1,7 +1,7 @@
 from typing import List
 from datetime import datetime
 from pytubefix import YouTube
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 @dataclass()
 class VideoInfo:
@@ -45,13 +45,17 @@ class YouTubeVideo:
             video_id=self.video.video_id,
             title=self.video.title, 
             description=self.video.description,
-            publish_date=self.video.publish_date,
+            publish_date=self.video.publish_date.strftime("%Y-%m-%d"),
             length_seconds=self.video.length,
             keywords=self.video.keywords,
             views=self.video.views,
             likes=self.video.likes,
             url=self.video.watch_url
         )
+        
+    def get_metadata_dict(self) -> dict:
+        metadata = self.get_metadata()
+        return asdict(metadata)
     
     def get_transcript(self, language: str = "a.hy", return_srt: bool = True) -> str:
         captions = self.video.captions.get(language)
