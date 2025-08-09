@@ -1,0 +1,1159 @@
+1
+00:00:00,520 --> 00:00:06,839
+hi and Welcome to our new chapter here
+
+2
+00:00:02,840 --> 00:00:09,280
+on random Forest so I will begin in in
+
+3
+00:00:06,839 --> 00:00:11,200
+this session to introduce what the
+
+4
+00:00:09,280 --> 00:00:13,360
+begging algorithm actually does so
+
+5
+00:00:11,200 --> 00:00:16,039
+begging is for bootstrap aggregation and
+
+6
+00:00:13,360 --> 00:00:18,720
+it's a preliminary version of the random
+
+7
+00:00:16,039 --> 00:00:20,359
+Forest but can be applied to any type of
+
+8
+00:00:18,720 --> 00:00:21,880
+machine learning model so we'll discuss
+
+9
+00:00:20,359 --> 00:00:25,160
+the basic idea of begging here in the
+
+10
+00:00:21,880 --> 00:00:26,800
+session then explain yeah that it's
+
+11
+00:00:25,160 --> 00:00:29,599
+based on wood strabbing I guess that's
+
+12
+00:00:26,800 --> 00:00:31,840
+already in the name and then we'll also
+
+13
+00:00:29,599 --> 00:00:35,320
+yeah I'm going try to understand a bit
+
+14
+00:00:31,840 --> 00:00:37,680
+more why this actually improves
+
+15
+00:00:35,320 --> 00:00:41,960
+predictive performance especially if we
+
+16
+00:00:37,680 --> 00:00:44,039
+apply bagging on top of somewhat random
+
+17
+00:00:41,960 --> 00:00:47,079
+unstable learning
+
+18
+00:00:44,039 --> 00:00:50,680
+algorithms okay so already explained the
+
+19
+00:00:47,079 --> 00:00:54,760
+name so the B and bagging is for
+
+20
+00:00:50,680 --> 00:00:57,960
+bootstrapping and the yeah egging is for
+
+21
+00:00:54,760 --> 00:00:59,559
+for aggregation so really easily easy to
+
+22
+00:00:57,960 --> 00:01:01,920
+explain how this works so the The
+
+23
+00:00:59,559 --> 00:01:04,720
+General idea is to create an ensemble
+
+24
+00:01:01,920 --> 00:01:06,760
+method it's the simplest Ensemble met
+
+25
+00:01:04,720 --> 00:01:09,759
+method out there in machine learning so
+
+26
+00:01:06,760 --> 00:01:13,479
+idea is to create multiple ml models fit
+
+27
+00:01:09,759 --> 00:01:16,840
+them on somewhat similar data generated
+
+28
+00:01:13,479 --> 00:01:19,759
+from the training data and yeah to Yeah
+
+29
+00:01:16,840 --> 00:01:22,400
+by that idea to hopefully improve their
+
+30
+00:01:19,759 --> 00:01:24,799
+productive performance somehow okay and
+
+31
+00:01:22,400 --> 00:01:27,400
+how that specifically works I'll explain
+
+32
+00:01:24,799 --> 00:01:29,920
+here for bagging and we'll see multiple
+
+33
+00:01:27,400 --> 00:01:32,799
+other instances of assemble methods like
+
+34
+00:01:29,920 --> 00:01:36,759
+boosting like stacking and so on in
+
+35
+00:01:32,799 --> 00:01:38,240
+other parts of the lecture so yeah the
+
+36
+00:01:36,759 --> 00:01:41,159
+individual machine learning models that
+
+37
+00:01:38,240 --> 00:01:42,799
+are that The Ensemble is Created from
+
+38
+00:01:41,159 --> 00:01:44,159
+they're usually called base Learners and
+
+39
+00:01:42,799 --> 00:01:46,840
+there are so-called homogeneous
+
+40
+00:01:44,159 --> 00:01:48,759
+ensembles that always use the same class
+
+41
+00:01:46,840 --> 00:01:51,880
+the same type of Bas Learners so for
+
+42
+00:01:48,759 --> 00:01:53,479
+example a cart a cart tree and that's
+
+43
+00:01:51,880 --> 00:01:55,320
+exactly what we're going to use later on
+
+44
+00:01:53,479 --> 00:01:57,200
+when we construct the random Forest but
+
+45
+00:01:55,320 --> 00:01:59,000
+they also heterogeneous orable methods
+
+46
+00:01:57,200 --> 00:02:01,520
+that can actually combine different
+
+47
+00:01:59,000 --> 00:02:04,399
+types of BAS Learners which will then
+
+48
+00:02:01,520 --> 00:02:06,280
+also usually have various degrees of
+
+49
+00:02:04,399 --> 00:02:08,759
+protective performance and that we
+
+50
+00:02:06,280 --> 00:02:12,760
+usually have to handle specifically
+
+51
+00:02:08,759 --> 00:02:16,599
+begging is a homogeneous method so we'll
+
+52
+00:02:12,760 --> 00:02:19,400
+always create similar
+
+53
+00:02:16,599 --> 00:02:22,239
+models in our bagging algorithm because
+
+54
+00:02:19,400 --> 00:02:24,760
+we'll always apply the same type of Base
+
+55
+00:02:22,239 --> 00:02:27,760
+learning algorithm on the other hand it
+
+56
+00:02:24,760 --> 00:02:30,280
+is a so-called model agnostic technique
+
+57
+00:02:27,760 --> 00:02:34,400
+so we can use bagging together with any
+
+58
+00:02:30,280 --> 00:02:36,440
+type of model at least technically we'll
+
+59
+00:02:34,400 --> 00:02:37,879
+discuss at the end of this session where
+
+60
+00:02:36,440 --> 00:02:40,319
+it actually makes the most sense and
+
+61
+00:02:37,879 --> 00:02:42,519
+where it's maybe not so useful so how
+
+62
+00:02:40,319 --> 00:02:44,319
+does this work as an algorithm it's
+
+63
+00:02:42,519 --> 00:02:46,200
+actually fairly simple you can basically
+
+64
+00:02:44,319 --> 00:02:48,280
+explain this on one slide I guess I'm
+
+65
+00:02:46,200 --> 00:02:49,879
+trying to do that here I guess that'ss
+
+66
+00:02:48,280 --> 00:02:54,280
+the training algorithm here on one slide
+
+67
+00:02:49,879 --> 00:02:56,680
+for bagging so what we do is we take our
+
+68
+00:02:54,280 --> 00:02:58,159
+original training data set D which you
+
+69
+00:02:56,680 --> 00:03:00,920
+can also see
+
+70
+00:02:58,159 --> 00:03:02,640
+here and we f fix the size of the
+
+71
+00:03:00,920 --> 00:03:06,640
+Ensemble so
+
+72
+00:03:02,640 --> 00:03:08,640
+our Ensemble our resulting Ensemble
+
+73
+00:03:06,640 --> 00:03:10,959
+should be of size capital M that's how
+
+74
+00:03:08,640 --> 00:03:13,120
+many models we want to want to generate
+
+75
+00:03:10,959 --> 00:03:15,799
+in the end so what we will now do is
+
+76
+00:03:13,120 --> 00:03:17,920
+that we will generate m capital M
+
+77
+00:03:15,799 --> 00:03:20,760
+bootstrap samples of our original
+
+78
+00:03:17,920 --> 00:03:22,599
+training data set D to generate some
+
+79
+00:03:20,760 --> 00:03:24,680
+variation in our data so we take our
+
+80
+00:03:22,599 --> 00:03:28,840
+original data set and then we simply
+
+81
+00:03:24,680 --> 00:03:30,760
+will draw M bootstrap variations of that
+
+82
+00:03:28,840 --> 00:03:34,200
+original data set which means we will
+
+83
+00:03:30,760 --> 00:03:37,560
+draw with replacement from the original
+
+84
+00:03:34,200 --> 00:03:39,120
+data set so draw an observation draw
+
+85
+00:03:37,560 --> 00:03:41,680
+another observation draw another
+
+86
+00:03:39,120 --> 00:03:44,560
+observation but with replacement until
+
+87
+00:03:41,680 --> 00:03:47,280
+we have drawn we have sampled n of these
+
+88
+00:03:44,560 --> 00:03:49,799
+so until we have sampled as many as we
+
+89
+00:03:47,280 --> 00:03:51,280
+had before in the original data set and
+
+90
+00:03:49,799 --> 00:03:55,680
+then on each of these
+
+91
+00:03:51,280 --> 00:03:58,760
+bootstrapped data sets I'll simply fit
+
+92
+00:03:55,680 --> 00:04:00,599
+my base learning algorithm and create a
+
+93
+00:03:58,760 --> 00:04:03,159
+model okay
+
+94
+00:04:00,599 --> 00:04:05,840
+and then I'll store these models that's
+
+95
+00:04:03,159 --> 00:04:07,319
+that's really it there's not much more
+
+96
+00:04:05,840 --> 00:04:09,120
+to say about the training algorithm if
+
+97
+00:04:07,319 --> 00:04:11,480
+you haven't seen boot straming before
+
+98
+00:04:09,120 --> 00:04:13,159
+yeah let's maybe discuss the the
+
+99
+00:04:11,480 --> 00:04:14,799
+sampling with replacement a little bit
+
+100
+00:04:13,159 --> 00:04:16,680
+well if we sample with replacement
+
+101
+00:04:14,799 --> 00:04:20,320
+what's going to happen there is a
+
+102
+00:04:16,680 --> 00:04:22,079
+certain possibility that some of the
+
+103
+00:04:20,320 --> 00:04:24,720
+observations from the original training
+
+104
+00:04:22,079 --> 00:04:27,000
+data set will be sampled multiple times
+
+105
+00:04:24,720 --> 00:04:28,880
+right so I guess you should be able to
+
+106
+00:04:27,000 --> 00:04:32,120
+see this here through the colors so this
+
+107
+00:04:28,880 --> 00:04:34,680
+guy is sampled twice here in this data
+
+108
+00:04:32,120 --> 00:04:36,560
+set and I guess this here is also
+
+109
+00:04:34,680 --> 00:04:39,880
+sampled twice but can happen multiple
+
+110
+00:04:36,560 --> 00:04:43,759
+times right all of the points that we
+
+111
+00:04:39,880 --> 00:04:45,360
+have sampled for a specific set in or in
+
+112
+00:04:43,759 --> 00:04:47,720
+a specific bootstrap iteration we would
+
+113
+00:04:45,360 --> 00:04:51,400
+call them in bag yeah so that in the bag
+
+114
+00:04:47,720 --> 00:04:54,160
+we sample them and because we can sample
+
+115
+00:04:51,400 --> 00:04:56,680
+points multiple times there will be also
+
+116
+00:04:54,160 --> 00:04:58,759
+certain points we will not sample and
+
+117
+00:04:56,680 --> 00:05:00,880
+these points are called out of B so
+
+118
+00:04:58,759 --> 00:05:04,639
+maybe I guess we can also check that
+
+119
+00:05:00,880 --> 00:05:08,120
+visually so if we for example look at
+
+120
+00:05:04,639 --> 00:05:12,520
+this thing here what have we not sampled
+
+121
+00:05:08,120 --> 00:05:15,600
+I guess this here would be out of back
+
+122
+00:05:12,520 --> 00:05:18,240
+for yeah the first bootstrap okay that's
+
+123
+00:05:15,600 --> 00:05:21,680
+just a little bit of terminology now how
+
+124
+00:05:18,240 --> 00:05:24,160
+do we predict with an emble it's even
+
+125
+00:05:21,680 --> 00:05:26,960
+simpler or how how do we predict with a
+
+126
+00:05:24,160 --> 00:05:30,039
+bagging Ensemble I should say well we
+
+127
+00:05:26,960 --> 00:05:32,919
+take our new observation ax we push it
+
+128
+00:05:30,039 --> 00:05:35,240
+into each of the Ensemble members we
+
+129
+00:05:32,919 --> 00:05:37,080
+create a prediction yeah and here I'm
+
+130
+00:05:35,240 --> 00:05:39,400
+looking at regression to start with the
+
+131
+00:05:37,080 --> 00:05:41,360
+simplest case then I get capital M
+
+132
+00:05:39,400 --> 00:05:43,560
+predictions and just average them and
+
+133
+00:05:41,360 --> 00:05:46,319
+that's it here's the algorithm as pseudo
+
+134
+00:05:43,560 --> 00:05:49,120
+code I will really not read that out now
+
+135
+00:05:46,319 --> 00:05:50,840
+because it is so simple uh we' have
+
+136
+00:05:49,120 --> 00:05:52,759
+already discussed that there's nothing
+
+137
+00:05:50,840 --> 00:05:55,919
+new in the training in the training
+
+138
+00:05:52,759 --> 00:05:57,880
+phase and the only thing I did here for
+
+139
+00:05:55,919 --> 00:06:00,400
+the prodection phase which is I just
+
+140
+00:05:57,880 --> 00:06:01,880
+made this more deta detailed and more
+
+141
+00:06:00,400 --> 00:06:03,400
+explicit for what happens in
+
+142
+00:06:01,880 --> 00:06:05,400
+classification which is always a little
+
+143
+00:06:03,400 --> 00:06:07,840
+bit more annoying because you have these
+
+144
+00:06:05,400 --> 00:06:10,440
+different uh types of outputs so you
+
+145
+00:06:07,840 --> 00:06:13,120
+could have trained hard labeling based
+
+146
+00:06:10,440 --> 00:06:15,080
+Learners which output discrete classes
+
+147
+00:06:13,120 --> 00:06:17,560
+you could have trained something that
+
+148
+00:06:15,080 --> 00:06:20,520
+predicts decision scores or you could
+
+149
+00:06:17,560 --> 00:06:23,199
+have trained something that outputs
+
+150
+00:06:20,520 --> 00:06:25,479
+predicts probabilities and from these
+
+151
+00:06:23,199 --> 00:06:28,440
+different variations you might now
+
+152
+00:06:25,479 --> 00:06:30,520
+construct the same types of outputs for
+
+153
+00:06:28,440 --> 00:06:32,440
+your resulting ensemble so there's a
+
+154
+00:06:30,520 --> 00:06:34,560
+bunch of different ways of aggregating
+
+155
+00:06:32,440 --> 00:06:36,560
+things now so if you for example have
+
+156
+00:06:34,560 --> 00:06:38,400
+decision scores well that's basically
+
+157
+00:06:36,560 --> 00:06:41,840
+like in a regression model so you just
+
+158
+00:06:38,400 --> 00:06:44,880
+average them as before if you have
+
+159
+00:06:41,840 --> 00:06:48,680
+produced hard labels in your Bas
+
+160
+00:06:44,880 --> 00:06:50,759
+Learners You Can Count yeah Over The
+
+161
+00:06:48,680 --> 00:06:52,960
+Ensemble and
+
+162
+00:06:50,759 --> 00:06:55,520
+by yeah and then you can do majority
+
+163
+00:06:52,960 --> 00:06:58,000
+voting so you would predict the class
+
+164
+00:06:55,520 --> 00:07:00,879
+that is predicted by most of the
+
+165
+00:06:58,000 --> 00:07:03,599
+Ensemble members but you could also
+
+166
+00:07:00,879 --> 00:07:05,520
+count again over these heart labels and
+
+167
+00:07:03,599 --> 00:07:08,599
+then count proportions and you might
+
+168
+00:07:05,520 --> 00:07:10,560
+treat that as a probability estimate for
+
+169
+00:07:08,599 --> 00:07:14,960
+your assael if you want to produce
+
+170
+00:07:10,560 --> 00:07:17,160
+probabilities or maybe you have trained
+
+171
+00:07:14,960 --> 00:07:20,479
+um probabilistic classifiers and then
+
+172
+00:07:17,160 --> 00:07:22,840
+can average their values to get a
+
+173
+00:07:20,479 --> 00:07:25,680
+resulting probabilistic classifier for
+
+174
+00:07:22,840 --> 00:07:28,479
+your orble so I'll not go into more
+
+175
+00:07:25,680 --> 00:07:30,800
+details here most of these things work
+
+176
+00:07:28,479 --> 00:07:32,800
+very similarly fairly easy to understand
+
+177
+00:07:30,800 --> 00:07:35,680
+and in terms of a performance
+
+178
+00:07:32,800 --> 00:07:38,680
+differences um um they are not large
+
+179
+00:07:35,680 --> 00:07:41,039
+okay so it's it's bit unclear which of
+
+180
+00:07:38,680 --> 00:07:41,039
+these is
+
+181
+00:07:41,759 --> 00:07:47,400
+better why or when does begging help so
+
+182
+00:07:45,879 --> 00:07:50,000
+what's the reason that this might be a
+
+183
+00:07:47,400 --> 00:07:52,599
+good technique so the whole idea behind
+
+184
+00:07:50,000 --> 00:07:56,400
+this and we'll explore this a little bit
+
+185
+00:07:52,599 --> 00:07:58,639
+later in more detail when I uh introduce
+
+186
+00:07:56,400 --> 00:08:00,520
+the complete random Forest so the idea
+
+187
+00:07:58,639 --> 00:08:02,520
+behind bagging is that it should reduce
+
+188
+00:08:00,520 --> 00:08:04,960
+the variability of our produtions
+
+189
+00:08:02,520 --> 00:08:07,039
+because we average over them we smooth
+
+190
+00:08:04,960 --> 00:08:08,840
+out right when we create these ensembles
+
+191
+00:08:07,039 --> 00:08:10,520
+and then we average in production now
+
+192
+00:08:08,840 --> 00:08:12,159
+that's a smoothing procedure it's the
+
+193
+00:08:10,520 --> 00:08:15,479
+oldest trick in the book of Statistics
+
+194
+00:08:12,159 --> 00:08:17,879
+if anything is like of two high variant
+
+195
+00:08:15,479 --> 00:08:21,039
+yeah we run it multiple times and we
+
+196
+00:08:17,879 --> 00:08:25,000
+average so this is particularly
+
+197
+00:08:21,039 --> 00:08:28,199
+effective yeah if the if large parts of
+
+198
+00:08:25,000 --> 00:08:30,240
+the prediction error of our underlying
+
+199
+00:08:28,199 --> 00:08:33,719
+base Learners is usually due to that
+
+200
+00:08:30,240 --> 00:08:35,959
+instability and often due and due to
+
+201
+00:08:33,719 --> 00:08:38,760
+some some Randomness some random noise
+
+202
+00:08:35,959 --> 00:08:41,479
+in that in that learning procedure so
+
+203
+00:08:38,760 --> 00:08:44,200
+what you can see here is I've yeah
+
+204
+00:08:41,479 --> 00:08:47,480
+created a bunch of different decision
+
+205
+00:08:44,200 --> 00:08:49,399
+trees very often combine begging with
+
+206
+00:08:47,480 --> 00:08:52,680
+decision trees that because decision
+
+207
+00:08:49,399 --> 00:08:54,160
+trees are somewhat unstable um as a
+
+208
+00:08:52,680 --> 00:08:56,240
+learning algorithm we have you we have
+
+209
+00:08:54,160 --> 00:08:58,480
+learned that before and I'm now creating
+
+210
+00:08:56,240 --> 00:09:01,120
+here yeah different bagging ensembles
+
+211
+00:08:58,480 --> 00:09:03,440
+based on trees for different sizes right
+
+212
+00:09:01,120 --> 00:09:05,839
+and here on the y- AIS you can see the
+
+213
+00:09:03,440 --> 00:09:07,279
+resulting MSE on the regression task
+
+214
+00:09:05,839 --> 00:09:10,320
+that I'm applying that to and you can
+
+215
+00:09:07,279 --> 00:09:13,720
+see how that goes down when Ensemble
+
+216
+00:09:10,320 --> 00:09:16,000
+size goes up on this and on this plot
+
+217
+00:09:13,720 --> 00:09:19,200
+you can see the underlying data
+
+218
+00:09:16,000 --> 00:09:21,240
+distribution as you can also see the the
+
+219
+00:09:19,200 --> 00:09:22,920
+true function that I've sampled from so
+
+220
+00:09:21,240 --> 00:09:25,680
+again something like a sinusoidal curve
+
+221
+00:09:22,920 --> 00:09:27,959
+and here you can see the predictions of
+
+222
+00:09:25,680 --> 00:09:29,920
+the individual trees yeah as these
+
+223
+00:09:27,959 --> 00:09:32,040
+greenish yeah
+
+224
+00:09:29,920 --> 00:09:35,320
+greenish confidence areas in the
+
+225
+00:09:32,040 --> 00:09:40,160
+background you can also see the mean of
+
+226
+00:09:35,320 --> 00:09:42,160
+the backed ensembles and so usually this
+
+227
+00:09:40,160 --> 00:09:45,240
+reduction of variance is a good thing
+
+228
+00:09:42,160 --> 00:09:48,800
+also in terms smooth it Smooths out the
+
+229
+00:09:45,240 --> 00:09:51,600
+response surface it usually results in a
+
+230
+00:09:48,800 --> 00:09:54,760
+reduction in prediction
+
+231
+00:09:51,600 --> 00:09:57,440
+error and the larger The Ensemble the
+
+232
+00:09:54,760 --> 00:09:59,399
+better this usually works up to a point
+
+233
+00:09:57,440 --> 00:10:02,040
+and this the optimal Ensemble size
+
+234
+00:09:59,399 --> 00:10:03,959
+usually depends on the specific learning
+
+235
+00:10:02,040 --> 00:10:06,600
+algorithm you're using and also
+
+236
+00:10:03,959 --> 00:10:09,640
+obviously depends on the data
+
+237
+00:10:06,600 --> 00:10:12,720
+distribution here's a small Benchmark so
+
+238
+00:10:09,640 --> 00:10:15,279
+we backed our sbls with about 100 base
+
+239
+00:10:12,720 --> 00:10:17,800
+Learners here I used the spam data set
+
+240
+00:10:15,279 --> 00:10:20,120
+which we've also seen before and I'm
+
+241
+00:10:17,800 --> 00:10:22,519
+applying that on top of logistic
+
+242
+00:10:20,120 --> 00:10:24,880
+regression which is a somewhat stable
+
+243
+00:10:22,519 --> 00:10:27,079
+learning algorithm so there's not too
+
+244
+00:10:24,880 --> 00:10:29,880
+much
+
+245
+00:10:27,079 --> 00:10:32,040
+yeah instability random variation in
+
+246
+00:10:29,880 --> 00:10:35,440
+that algorithm there is the card
+
+247
+00:10:32,040 --> 00:10:38,120
+algorithm yeah that is somewhat unstable
+
+248
+00:10:35,440 --> 00:10:39,079
+you can see that here using bagging on
+
+249
+00:10:38,120 --> 00:10:42,160
+top of
+
+250
+00:10:39,079 --> 00:10:45,160
+that improves the result by quite a
+
+251
+00:10:42,160 --> 00:10:47,639
+large margin although the specification
+
+252
+00:10:45,160 --> 00:10:50,560
+of the card algorithm here doesn't seem
+
+253
+00:10:47,639 --> 00:10:52,959
+to work yeah too well in comparison to
+
+254
+00:10:50,560 --> 00:10:55,399
+our logistic regression model and also
+
+255
+00:10:52,959 --> 00:10:57,399
+in comparison here to a k nearest
+
+256
+00:10:55,399 --> 00:10:58,800
+neighbor algorithm and that's also that
+
+257
+00:10:57,399 --> 00:11:01,240
+depends a little bit on the setting of
+
+258
+00:10:58,800 --> 00:11:03,320
+the case so you use the medium setting
+
+259
+00:11:01,240 --> 00:11:06,639
+here for for k for the number of nearest
+
+260
+00:11:03,320 --> 00:11:09,320
+neighbors but yeah both both of these so
+
+261
+00:11:06,639 --> 00:11:11,200
+the logistic regression and the K's
+
+262
+00:11:09,320 --> 00:11:13,399
+neighbor they are somewhat improved by
+
+263
+00:11:11,200 --> 00:11:15,480
+bagging but not too much which is
+
+264
+00:11:13,399 --> 00:11:17,880
+because they are a bit more stable yeah
+
+265
+00:11:15,480 --> 00:11:20,360
+so for specifically true for the
+
+266
+00:11:17,880 --> 00:11:22,040
+logistic regression but for the K andn
+
+267
+00:11:20,360 --> 00:11:24,839
+depends a bit on the on the setting of
+
+268
+00:11:22,040 --> 00:11:27,399
+the K so for smaller case it will become
+
+269
+00:11:24,839 --> 00:11:29,639
+a bit more unstable and for a larger
+
+270
+00:11:27,399 --> 00:11:32,800
+case it will be a bit more stable is
+
+271
+00:11:29,639 --> 00:11:35,160
+also quite often applied to new networks
+
+272
+00:11:32,800 --> 00:11:37,279
+often fitted through randomized
+
+273
+00:11:35,160 --> 00:11:39,600
+optimization procedure procedures like a
+
+274
+00:11:37,279 --> 00:11:42,560
+stochastic radi descent and if you then
+
+275
+00:11:39,600 --> 00:11:44,399
+fit your n network on a smaller data set
+
+276
+00:11:42,560 --> 00:11:46,160
+which might happen yeah not every data
+
+277
+00:11:44,399 --> 00:11:48,519
+set is large scale and for for some
+
+278
+00:11:46,160 --> 00:11:50,519
+reasons you might still prefer to run a
+
+279
+00:11:48,519 --> 00:11:53,240
+new network procedure and then very
+
+280
+00:11:50,519 --> 00:11:56,360
+often some some form of bagging is
+
+281
+00:11:53,240 --> 00:11:58,920
+applied there to stabilize yeah the
+
+282
+00:11:56,360 --> 00:12:00,920
+resulting Ensemble sometimes they only
+
+283
+00:11:58,920 --> 00:12:02,240
+do this this even over different seats
+
+284
+00:12:00,920 --> 00:12:03,040
+yeah they might not even bootstrap the
+
+285
+00:12:02,240 --> 00:12:07,360
+data
+
+286
+00:12:03,040 --> 00:12:10,440
+set okay this concludes our introductory
+
+287
+00:12:07,360 --> 00:12:12,360
+session here I I'll stop now and I hope
+
+288
+00:12:10,440 --> 00:12:14,480
+to see you again in the next session
+
+289
+00:12:12,360 --> 00:12:17,839
+where I will then really introduce the
+
+290
+00:12:14,480 --> 00:12:17,839
+random Forest bye-bye

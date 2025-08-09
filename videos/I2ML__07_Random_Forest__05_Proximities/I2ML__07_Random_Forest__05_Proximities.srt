@@ -1,0 +1,587 @@
+1
+00:00:00,440 --> 00:00:04,440
+welcome back to introduction to machine
+
+2
+00:00:02,159 --> 00:00:06,240
+learning I'm lud bman and in this video
+
+3
+00:00:04,440 --> 00:00:09,080
+I will tell you about proximities and
+
+4
+00:00:06,240 --> 00:00:10,639
+random forests first we have to
+
+5
+00:00:09,080 --> 00:00:13,719
+understand how random forests can be
+
+6
+00:00:10,639 --> 00:00:15,200
+used to define proximities and then we
+
+7
+00:00:13,719 --> 00:00:18,119
+want to learn about how these
+
+8
+00:00:15,200 --> 00:00:21,439
+proximities can be used and for which uh
+
+9
+00:00:18,119 --> 00:00:24,560
+use cases these can be
+
+10
+00:00:21,439 --> 00:00:28,119
+used so first about Computing these
+
+11
+00:00:24,560 --> 00:00:30,800
+proximities so the goal is to compute
+
+12
+00:00:28,119 --> 00:00:33,160
+proximities between
+
+13
+00:00:30,800 --> 00:00:35,680
+observations okay so you have an
+
+14
+00:00:33,160 --> 00:00:38,640
+observation x i and an observation XJ
+
+15
+00:00:35,680 --> 00:00:41,120
+and you want to know how far they are
+
+16
+00:00:38,640 --> 00:00:44,840
+away from each other or how near they
+
+17
+00:00:41,120 --> 00:00:48,920
+are to each other so here we look at two
+
+18
+00:00:44,840 --> 00:00:51,520
+IDs one and two and at the features of
+
+19
+00:00:48,920 --> 00:00:54,280
+these observations so we are not looking
+
+20
+00:00:51,520 --> 00:00:57,160
+at the Target variables but just at the
+
+21
+00:00:54,280 --> 00:01:00,719
+features so in this case color form and
+
+22
+00:00:57,160 --> 00:01:03,960
+length and what we do here is is that
+
+23
+00:01:00,719 --> 00:01:07,119
+first we train uh random forest and
+
+24
+00:01:03,960 --> 00:01:10,759
+after training we push all observations
+
+25
+00:01:07,119 --> 00:01:15,159
+through each tree so we put or push
+
+26
+00:01:10,759 --> 00:01:20,360
+observation one through tree 1 tre2 and
+
+27
+00:01:15,159 --> 00:01:24,520
+tree3 and the same for observation two
+
+28
+00:01:20,360 --> 00:01:27,200
+goes through all three trees and then we
+
+29
+00:01:24,520 --> 00:01:30,880
+just compare the predictions of each of
+
+30
+00:01:27,200 --> 00:01:36,079
+all these trees and we count how many
+
+31
+00:01:30,880 --> 00:01:37,159
+times a tree predicts the same class for
+
+32
+00:01:36,079 --> 00:01:38,880
+those two
+
+33
+00:01:37,159 --> 00:01:43,079
+observations
+
+34
+00:01:38,880 --> 00:01:46,560
+so in this case tree
+
+35
+00:01:43,079 --> 00:01:49,159
+one predicts different Target variables
+
+36
+00:01:46,560 --> 00:01:51,200
+for observation one and two but trees
+
+37
+00:01:49,159 --> 00:01:56,360
+two and
+
+38
+00:01:51,200 --> 00:01:58,920
+three predict the same value okay so in
+
+39
+00:01:56,360 --> 00:02:01,680
+two or three cases they have the same
+
+40
+00:01:58,920 --> 00:02:05,399
+value so proximity of these two
+
+41
+00:02:01,680 --> 00:02:07,200
+observations is 2 / 3 now we can do this
+
+42
+00:02:05,399 --> 00:02:09,599
+for all the observations in the data set
+
+43
+00:02:07,200 --> 00:02:14,000
+so we have n observations in a data set
+
+44
+00:02:09,599 --> 00:02:16,160
+so we get n * n or a matrix with n * n
+
+45
+00:02:14,000 --> 00:02:19,040
+entries which is of course a symmetric
+
+46
+00:02:16,160 --> 00:02:23,160
+Matrix because X1 and X2 have the same
+
+47
+00:02:19,040 --> 00:02:23,160
+proximity as X2 and X1
+
+48
+00:02:23,319 --> 00:02:28,959
+sure what can we do with these
+
+49
+00:02:26,120 --> 00:02:32,760
+proximities first we can try to just
+
+50
+00:02:28,959 --> 00:02:34,720
+visualize the data set that we have so
+
+51
+00:02:32,760 --> 00:02:37,560
+usually a data set has more than just
+
+52
+00:02:34,720 --> 00:02:40,480
+two variables so it's hard to have a
+
+53
+00:02:37,560 --> 00:02:43,120
+good plot of this data set because you
+
+54
+00:02:40,480 --> 00:02:45,920
+well have too many dimensions to fit on
+
+55
+00:02:43,120 --> 00:02:49,319
+a screen or on the paper so what we can
+
+56
+00:02:45,920 --> 00:02:51,920
+do is we compute this proximity Matrix
+
+57
+00:02:49,319 --> 00:02:54,519
+so each row and each column of this
+
+58
+00:02:51,920 --> 00:02:57,280
+proximity Matrix refer to one
+
+59
+00:02:54,519 --> 00:03:00,400
+observation of course one observation is
+
+60
+00:02:57,280 --> 00:03:03,799
+always perfectly to to itself
+
+61
+00:03:00,400 --> 00:03:06,280
+but others are perhaps not and then we
+
+62
+00:03:03,799 --> 00:03:08,080
+can use this proximity Matrix perhaps
+
+63
+00:03:06,280 --> 00:03:10,360
+first we have to take the inverse to
+
+64
+00:03:08,080 --> 00:03:13,400
+compute distances but then we can
+
+65
+00:03:10,360 --> 00:03:16,560
+visualize these distances for example
+
+66
+00:03:13,400 --> 00:03:18,480
+what we see here is that well the the
+
+67
+00:03:16,560 --> 00:03:22,440
+three classes of this penguin data set
+
+68
+00:03:18,480 --> 00:03:25,879
+ardelia chinstrap and gen two can be
+
+69
+00:03:22,440 --> 00:03:28,080
+seen here from this plot but what we Al
+
+70
+00:03:25,879 --> 00:03:32,319
+also see is that for example this class
+
+71
+00:03:28,080 --> 00:03:36,200
+Adelia has a r the high inclass variance
+
+72
+00:03:32,319 --> 00:03:40,439
+so values are in this in this area as
+
+73
+00:03:36,200 --> 00:03:43,159
+opposed to gen two which are perhaps not
+
+74
+00:03:40,439 --> 00:03:45,280
+that diverse inside the class okay so we
+
+75
+00:03:43,159 --> 00:03:48,200
+have perhaps learned something about the
+
+76
+00:03:45,280 --> 00:03:50,319
+data set and we also see that well these
+
+77
+00:03:48,200 --> 00:03:52,640
+two classes and also the third class
+
+78
+00:03:50,319 --> 00:03:55,159
+overlap with each other which perhaps
+
+79
+00:03:52,640 --> 00:03:59,200
+will make it challenging to train a good
+
+80
+00:03:55,159 --> 00:03:59,200
+classification model right
+
+81
+00:04:00,319 --> 00:04:05,640
+also using this visualization we can
+
+82
+00:04:02,760 --> 00:04:08,640
+locate outliers for example this point
+
+83
+00:04:05,640 --> 00:04:11,079
+over here belongs to the class chinstrap
+
+84
+00:04:08,640 --> 00:04:13,879
+but well it's quite far away from all
+
+85
+00:04:11,079 --> 00:04:14,840
+the other observations so yeah it's a
+
+86
+00:04:13,879 --> 00:04:17,639
+perhaps
+
+87
+00:04:14,840 --> 00:04:21,479
+untypical data point of this
+
+88
+00:04:17,639 --> 00:04:24,600
+class we could also use this to have a
+
+89
+00:04:21,479 --> 00:04:26,360
+look for mislabeled data points this can
+
+90
+00:04:24,600 --> 00:04:29,199
+also happen especially in manually
+
+91
+00:04:26,360 --> 00:04:32,160
+labeled data sets or data set where the
+
+92
+00:04:29,199 --> 00:04:35,000
+target variable is defined by a human
+
+93
+00:04:32,160 --> 00:04:38,520
+inspector somehow so we have to I guess
+
+94
+00:04:35,000 --> 00:04:41,120
+a lot in for example medical contexts or
+
+95
+00:04:38,520 --> 00:04:44,080
+other computer vision tasks where people
+
+96
+00:04:41,120 --> 00:04:46,840
+are asked to label images so perhaps
+
+97
+00:04:44,080 --> 00:04:50,800
+they also commit errors and perhaps we
+
+98
+00:04:46,840 --> 00:04:52,440
+can see um some of these mislabeled data
+
+99
+00:04:50,800 --> 00:04:55,400
+points with these proximity
+
+100
+00:04:52,440 --> 00:04:55,400
+visualizations as
+
+101
+00:04:56,080 --> 00:05:01,800
+well as third use case of these
+
+102
+00:04:58,880 --> 00:05:03,080
+proximities is the imputation of missing
+
+103
+00:05:01,800 --> 00:05:06,520
+data
+
+104
+00:05:03,080 --> 00:05:11,160
+points so let's say we have this data
+
+105
+00:05:06,520 --> 00:05:13,680
+set here with four columns color form
+
+106
+00:05:11,160 --> 00:05:16,880
+original length or four features and we
+
+107
+00:05:13,680 --> 00:05:19,319
+have missing variables this
+
+108
+00:05:16,880 --> 00:05:22,840
+one and that
+
+109
+00:05:19,319 --> 00:05:25,840
+one and or missing yeah missing
+
+110
+00:05:22,840 --> 00:05:27,639
+observations here and what we could do
+
+111
+00:05:25,840 --> 00:05:31,520
+of course is to replace all these
+
+112
+00:05:27,639 --> 00:05:33,240
+missings with the median of each column
+
+113
+00:05:31,520 --> 00:05:36,160
+okay so that's totally fine we can
+
+114
+00:05:33,240 --> 00:05:38,680
+compute that here we did that so we just
+
+115
+00:05:36,160 --> 00:05:41,280
+imputed those two observations with the
+
+116
+00:05:38,680 --> 00:05:44,639
+median of these two observations which
+
+117
+00:05:41,280 --> 00:05:47,400
+is brown and 14 in these two cases and
+
+118
+00:05:44,639 --> 00:05:49,319
+now that we have a data set without
+
+119
+00:05:47,400 --> 00:05:51,440
+missing values we can compute the
+
+120
+00:05:49,319 --> 00:05:53,560
+proximities okay so we have to do some
+
+121
+00:05:51,440 --> 00:05:56,440
+imputation first to compute the missing
+
+122
+00:05:53,560 --> 00:05:58,319
+values but yeah now we can do this
+
+123
+00:05:56,440 --> 00:06:00,639
+that's the second step now we've
+
+124
+00:05:58,319 --> 00:06:02,919
+computed the proximities after a data
+
+125
+00:06:00,639 --> 00:06:05,160
+set has changed and now we can replace
+
+126
+00:06:02,919 --> 00:06:07,479
+the missings by a weighted average of
+
+127
+00:06:05,160 --> 00:06:10,000
+the non-m missings so let's say we look
+
+128
+00:06:07,479 --> 00:06:12,080
+at the column length here and remember
+
+129
+00:06:10,000 --> 00:06:14,800
+that this observation was missing
+
+130
+00:06:12,080 --> 00:06:17,880
+beforehand so after imputing the median
+
+131
+00:06:14,800 --> 00:06:20,800
+of all the missing values we can compute
+
+132
+00:06:17,880 --> 00:06:22,280
+the proximities and for example the
+
+133
+00:06:20,800 --> 00:06:24,759
+third observation and the second
+
+134
+00:06:22,280 --> 00:06:28,680
+observations seem to be not that far
+
+135
+00:06:24,759 --> 00:06:32,400
+away so we take a weighted average of 14
+
+136
+00:06:28,680 --> 00:06:35,120
+19 and and 14 but 19 gets a high weight
+
+137
+00:06:32,400 --> 00:06:38,120
+because this proximity between these two
+
+138
+00:06:35,120 --> 00:06:41,599
+observations is rather High
+
+139
+00:06:38,120 --> 00:06:44,919
+okay so we could say we are done but
+
+140
+00:06:41,599 --> 00:06:48,240
+because we computed the proximities on
+
+141
+00:06:44,919 --> 00:06:50,360
+the rather under complex imputation by
+
+142
+00:06:48,240 --> 00:06:52,520
+just imputing the median perhaps we can
+
+143
+00:06:50,360 --> 00:06:54,720
+do this again and again to get rid of
+
+144
+00:06:52,520 --> 00:06:58,080
+this under complex imputation and have
+
+145
+00:06:54,720 --> 00:07:01,680
+this kind of better imputation with the
+
+146
+00:06:58,080 --> 00:07:04,919
+weighted average using proximities in a
+
+147
+00:07:01,680 --> 00:07:04,919
+random Forest

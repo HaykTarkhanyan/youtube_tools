@@ -1,0 +1,1043 @@
+1
+00:00:00,520 --> 00:00:05,040
+welcome back to introduction to machine
+
+2
+00:00:02,360 --> 00:00:08,040
+learning I'm ludrick botman and in this
+
+3
+00:00:05,040 --> 00:00:10,599
+video I will speak about outof b error
+
+4
+00:00:08,040 --> 00:00:12,759
+estimate first you should understand the
+
+5
+00:00:10,599 --> 00:00:15,400
+concept of outof back observations and
+
+6
+00:00:12,759 --> 00:00:17,760
+inback observations and then you will
+
+7
+00:00:15,400 --> 00:00:21,160
+learn how to use these outof back
+
+8
+00:00:17,760 --> 00:00:23,359
+observations to get a proper estimate of
+
+9
+00:00:21,160 --> 00:00:26,560
+the generalization error during
+
+10
+00:00:23,359 --> 00:00:29,240
+training but first we have to get clear
+
+11
+00:00:26,560 --> 00:00:31,880
+what out of bag and in bag observations
+
+12
+00:00:29,240 --> 00:00:33,879
+are here you see first the visualization
+
+13
+00:00:31,880 --> 00:00:36,640
+and then a more formal definition of
+
+14
+00:00:33,879 --> 00:00:40,719
+what happens here so remember that in
+
+15
+00:00:36,640 --> 00:00:43,840
+begging we use bootstrap to draw several
+
+16
+00:00:40,719 --> 00:00:45,160
+data sets from the original entire data
+
+17
+00:00:43,840 --> 00:00:48,039
+set uh with
+
+18
+00:00:45,160 --> 00:00:50,840
+replacement so let's say we start with
+
+19
+00:00:48,039 --> 00:00:54,480
+with this data set here it has three
+
+20
+00:00:50,840 --> 00:00:58,000
+observations one two and three the
+
+21
+00:00:54,480 --> 00:01:00,320
+column banana is the target variable the
+
+22
+00:00:58,000 --> 00:01:03,760
+others are features
+
+23
+00:01:00,320 --> 00:01:07,439
+and in the first bootstrap iteration
+
+24
+00:01:03,760 --> 00:01:09,360
+we sample three observations from these
+
+25
+00:01:07,439 --> 00:01:11,520
+three observations but with replacement
+
+26
+00:01:09,360 --> 00:01:15,119
+so in this case it happens that the
+
+27
+00:01:11,520 --> 00:01:16,799
+second sorry that the second observation
+
+28
+00:01:15,119 --> 00:01:19,920
+does not make it into the bootstrap
+
+29
+00:01:16,799 --> 00:01:22,320
+sample so we have the first observation
+
+30
+00:01:19,920 --> 00:01:24,920
+and we duplicate the third
+
+31
+00:01:22,320 --> 00:01:26,360
+observation and so we just we just have
+
+32
+00:01:24,920 --> 00:01:29,920
+observations one and three in the
+
+33
+00:01:26,360 --> 00:01:33,079
+bootstrap sample but three two times so
+
+34
+00:01:29,920 --> 00:01:36,759
+so and then later we use this data set
+
+35
+00:01:33,079 --> 00:01:38,640
+to train a model could be a tree for for
+
+36
+00:01:36,759 --> 00:01:41,840
+random forests it will be a tree of
+
+37
+00:01:38,640 --> 00:01:44,439
+course and then later we can use the
+
+38
+00:01:41,840 --> 00:01:46,799
+observation that we did not use for
+
+39
+00:01:44,439 --> 00:01:48,719
+training the tree so the second
+
+40
+00:01:46,799 --> 00:01:53,200
+observation
+
+41
+00:01:48,719 --> 00:01:55,039
+to predict its Target variable with this
+
+42
+00:01:53,200 --> 00:02:00,719
+trained
+
+43
+00:01:55,039 --> 00:02:00,719
+tree so we have inback observations
+
+44
+00:02:01,000 --> 00:02:08,319
+these are exactly the observations that
+
+45
+00:02:03,360 --> 00:02:10,560
+are inside the M bootstrap sample so
+
+46
+00:02:08,319 --> 00:02:12,040
+let's have an example here perhaps you
+
+47
+00:02:10,560 --> 00:02:13,840
+stop the video and try to figure it out
+
+48
+00:02:12,040 --> 00:02:20,360
+yourself before I write it
+
+49
+00:02:13,840 --> 00:02:25,319
+down okay so I B of
+
+50
+00:02:20,360 --> 00:02:26,640
+one is or are all the indices indices of
+
+51
+00:02:25,319 --> 00:02:30,319
+all observations that are in the
+
+52
+00:02:26,640 --> 00:02:31,440
+bootstrap samples so one and three so
+
+53
+00:02:30,319 --> 00:02:35,400
+it's
+
+54
+00:02:31,440 --> 00:02:37,879
+exactly this set okay and the opposite
+
+55
+00:02:35,400 --> 00:02:39,840
+holds for the out ofb
+
+56
+00:02:37,879 --> 00:02:42,640
+observations these are exactly the
+
+57
+00:02:39,840 --> 00:02:45,480
+observations that are not inside the M
+
+58
+00:02:42,640 --> 00:02:48,599
+bootstrap sample so
+
+59
+00:02:45,480 --> 00:02:50,840
+o o b
+
+60
+00:02:48,599 --> 00:02:56,319
+of
+
+61
+00:02:50,840 --> 00:02:58,400
+one will be exactly two so just this
+
+62
+00:02:56,319 --> 00:03:01,080
+second line
+
+63
+00:02:58,400 --> 00:03:03,040
+here and then we can do this for all the
+
+64
+00:03:01,080 --> 00:03:05,799
+trees here we only see it for one tree
+
+65
+00:03:03,040 --> 00:03:07,959
+but when we do it for all the trees then
+
+66
+00:03:05,799 --> 00:03:10,280
+we can in the end also compute the
+
+67
+00:03:07,959 --> 00:03:13,080
+number of trees where one observation is
+
+68
+00:03:10,280 --> 00:03:14,799
+out of back so we can't have the example
+
+69
+00:03:13,080 --> 00:03:17,120
+here because we just see one bootstrap
+
+70
+00:03:14,799 --> 00:03:20,239
+sample but then we can use compute for
+
+71
+00:03:17,120 --> 00:03:22,680
+each observation in how many trees it is
+
+72
+00:03:20,239 --> 00:03:22,680
+out of
+
+73
+00:03:24,680 --> 00:03:32,080
+back okay so what do we do with these
+
+74
+00:03:28,040 --> 00:03:34,319
+out of back observation now we
+
+75
+00:03:32,080 --> 00:03:38,480
+predict for all
+
+76
+00:03:34,319 --> 00:03:41,000
+these or predict for the E observation
+
+77
+00:03:38,480 --> 00:03:45,000
+with all the trees for which it is out
+
+78
+00:03:41,000 --> 00:03:46,720
+of back so on the last slide we just had
+
+79
+00:03:45,000 --> 00:03:51,200
+one bootstrap sample and just one
+
+80
+00:03:46,720 --> 00:03:53,439
+trained tree okay here we have now four
+
+81
+00:03:51,200 --> 00:03:55,239
+bootstrap samples which you don't see
+
+82
+00:03:53,439 --> 00:03:58,200
+but you see the four trees that were
+
+83
+00:03:55,239 --> 00:04:00,079
+trained on these four bootstrap samples
+
+84
+00:03:58,200 --> 00:04:03,760
+we still have those three observations 1
+
+85
+00:04:00,079 --> 00:04:08,680
+2 and three um and now we have a further
+
+86
+00:04:03,760 --> 00:04:11,840
+column the last one here this tells us
+
+87
+00:04:08,680 --> 00:04:15,400
+in which of the trees this observation
+
+88
+00:04:11,840 --> 00:04:18,280
+is out of back so we already know that
+
+89
+00:04:15,400 --> 00:04:21,000
+for the first observation sorry for the
+
+90
+00:04:18,280 --> 00:04:23,120
+second observation this was out of back
+
+91
+00:04:21,000 --> 00:04:26,520
+in the first tree okay that's the same
+
+92
+00:04:23,120 --> 00:04:30,160
+tree as before here so we see here it's
+
+93
+00:04:26,520 --> 00:04:33,039
+out of back for tree one and and it
+
+94
+00:04:30,160 --> 00:04:35,360
+turns out that it's not only out of back
+
+95
+00:04:33,039 --> 00:04:38,400
+for tree one but it's also out of back
+
+96
+00:04:35,360 --> 00:04:44,759
+for trees three and
+
+97
+00:04:38,400 --> 00:04:48,320
+four so what we do now to compute the
+
+98
+00:04:44,759 --> 00:04:52,720
+out of back prediction for observation
+
+99
+00:04:48,320 --> 00:04:57,120
+two okay so we take observation two I
+
+100
+00:04:52,720 --> 00:05:01,600
+want to compute the out of back
+
+101
+00:04:57,120 --> 00:05:04,280
+prediction okay let that s in and then
+
+102
+00:05:01,600 --> 00:05:06,759
+we'll see how that works so we used the
+
+103
+00:05:04,280 --> 00:05:08,639
+second observation and predicted with
+
+104
+00:05:06,759 --> 00:05:12,680
+all the trees where it's out of back so
+
+105
+00:05:08,639 --> 00:05:15,440
+that's one three one three and four so
+
+106
+00:05:12,680 --> 00:05:18,680
+we don't look at three two that's not of
+
+107
+00:05:15,440 --> 00:05:21,360
+Interest right now but we predict
+
+108
+00:05:18,680 --> 00:05:26,000
+observation 2 with
+
+109
+00:05:21,360 --> 00:05:29,759
+31 that gives us banana equals yes as a
+
+110
+00:05:26,000 --> 00:05:33,680
+prediction with tree three
+
+111
+00:05:29,759 --> 00:05:37,759
+which also predicts yes and Tre four
+
+112
+00:05:33,680 --> 00:05:40,680
+which predicts no so since we know the
+
+113
+00:05:37,759 --> 00:05:42,400
+true label here because we're on the
+
+114
+00:05:40,680 --> 00:05:45,720
+training data we know that the true
+
+115
+00:05:42,400 --> 00:05:48,400
+labels we can compare how often the
+
+116
+00:05:45,720 --> 00:05:51,440
+prediction was correct and how often it
+
+117
+00:05:48,400 --> 00:05:55,280
+was incorrect and in this case two of
+
+118
+00:05:51,440 --> 00:06:00,160
+those predictions namely from 3 1 and
+
+119
+00:05:55,280 --> 00:06:04,120
+tree3 were correct and one predict
+
+120
+00:06:00,160 --> 00:06:07,520
+namely from 34 is
+
+121
+00:06:04,120 --> 00:06:11,639
+incorrect okay
+
+122
+00:06:07,520 --> 00:06:14,720
+so in summation in summation the out ofb
+
+123
+00:06:11,639 --> 00:06:19,720
+prediction will be 2 ided by 3 because
+
+124
+00:06:14,720 --> 00:06:23,680
+we have yeah in two two cases we were
+
+125
+00:06:19,720 --> 00:06:23,680
+correct so we can
+
+126
+00:06:25,280 --> 00:06:31,199
+evaluate okay so perhaps to to to say
+
+127
+00:06:28,919 --> 00:06:34,240
+this once again the this is the outof
+
+128
+00:06:31,199 --> 00:06:38,080
+back prediction which is 2 / 3 because
+
+129
+00:06:34,240 --> 00:06:39,639
+in two cases we were in the class one so
+
+130
+00:06:38,080 --> 00:06:44,599
+this assumes so this auto back
+
+131
+00:06:39,639 --> 00:06:48,479
+prediction assumes that yes equals 1 and
+
+132
+00:06:44,599 --> 00:06:51,120
+no no equal zero okay so this does not
+
+133
+00:06:48,479 --> 00:06:55,960
+tell us if we are correct or not but
+
+134
+00:06:51,120 --> 00:06:58,919
+here we see if we are correct or not
+
+135
+00:06:55,960 --> 00:07:02,960
+okay so we can now do this for all the
+
+136
+00:06:58,919 --> 00:07:06,879
+observations also for observation one
+
+137
+00:07:02,960 --> 00:07:09,400
+and three also comput comput the outof
+
+138
+00:07:06,879 --> 00:07:12,440
+back prediction here and then we can use
+
+139
+00:07:09,400 --> 00:07:15,160
+all those a ofb predictions and use some
+
+140
+00:07:12,440 --> 00:07:17,440
+loss function or set based evaluation
+
+141
+00:07:15,160 --> 00:07:19,800
+metric to estimate the generalization
+
+142
+00:07:17,440 --> 00:07:22,560
+error and the good thing is that this
+
+143
+00:07:19,800 --> 00:07:25,720
+estimated generalization error is not
+
+144
+00:07:22,560 --> 00:07:28,680
+optimistically biased because we do not
+
+145
+00:07:25,720 --> 00:07:31,520
+violate violate the untouched test set
+
+146
+00:07:28,680 --> 00:07:31,520
+principle
+
+147
+00:07:33,720 --> 00:07:37,479
+here you have the pseudo code for
+
+148
+00:07:35,639 --> 00:07:40,039
+exactly the same thing that I've
+
+149
+00:07:37,479 --> 00:07:43,280
+explained before so what we need as an
+
+150
+00:07:40,039 --> 00:07:45,520
+input are all those sets where we see
+
+151
+00:07:43,280 --> 00:07:48,879
+which observation is out of back one of
+
+152
+00:07:45,520 --> 00:07:51,240
+course all the Ensemble members that are
+
+153
+00:07:48,879 --> 00:07:55,080
+trained and of course all the training
+
+154
+00:07:51,240 --> 00:07:57,240
+data and then for each
+
+155
+00:07:55,080 --> 00:08:00,599
+observation we go through Loop and
+
+156
+00:07:57,240 --> 00:08:03,240
+compute the o o prediction for this
+
+157
+00:08:00,599 --> 00:08:05,720
+observation for regression we usually
+
+158
+00:08:03,240 --> 00:08:09,599
+use f fad but for classification you
+
+159
+00:08:05,720 --> 00:08:11,919
+could also use pad also fad or perhaps
+
+160
+00:08:09,599 --> 00:08:15,759
+the hard label classifier doesn't really
+
+161
+00:08:11,919 --> 00:08:18,240
+matter so what you do is you go through
+
+162
+00:08:15,759 --> 00:08:22,240
+all the
+
+163
+00:08:18,240 --> 00:08:24,319
+trees and if the observation is out of
+
+164
+00:08:22,240 --> 00:08:26,440
+back in that tree then this thing will
+
+165
+00:08:24,319 --> 00:08:28,039
+be one if it's not out of beon at zero
+
+166
+00:08:26,440 --> 00:08:30,319
+so it doesn't really matter what what
+
+167
+00:08:28,039 --> 00:08:32,919
+comes behind this but if the observation
+
+168
+00:08:30,319 --> 00:08:35,240
+start of back in that tree then you just
+
+169
+00:08:32,919 --> 00:08:38,120
+look at the
+
+170
+00:08:35,240 --> 00:08:41,800
+prediction from that tree for this
+
+171
+00:08:38,120 --> 00:08:44,279
+observation features so F had M of
+
+172
+00:08:41,800 --> 00:08:47,800
+XI and then in the end of course you
+
+173
+00:08:44,279 --> 00:08:48,839
+have to normalize this so that this gets
+
+174
+00:08:47,800 --> 00:08:53,360
+to be an
+
+175
+00:08:48,839 --> 00:08:57,800
+average and then you have the out ofb
+
+176
+00:08:53,360 --> 00:09:00,519
+prediction of the for the E observation
+
+177
+00:08:57,800 --> 00:09:02,839
+and then you can use all these out of
+
+178
+00:09:00,519 --> 00:09:05,160
+back predictions compare them for
+
+179
+00:09:02,839 --> 00:09:06,800
+example with some loss function but
+
+180
+00:09:05,160 --> 00:09:09,560
+again you can also use a set based
+
+181
+00:09:06,800 --> 00:09:12,040
+evaluation matric row here and just go
+
+182
+00:09:09,560 --> 00:09:14,000
+over all these observations here average
+
+183
+00:09:12,040 --> 00:09:16,320
+the losses and you get not
+
+184
+00:09:14,000 --> 00:09:18,959
+optimistically biased estimation of the
+
+185
+00:09:16,320 --> 00:09:18,959
+generalization
+
+186
+00:09:20,440 --> 00:09:25,600
+error yeah what can you do with this so
+
+187
+00:09:23,800 --> 00:09:29,000
+what you see here is a small
+
+188
+00:09:25,600 --> 00:09:31,959
+visualization for the spam data set so
+
+189
+00:09:29,000 --> 00:09:35,320
+classific ation binary Target is it a
+
+190
+00:09:31,959 --> 00:09:38,079
+spam email or not on the xaxis you see
+
+191
+00:09:35,320 --> 00:09:40,519
+the number of trees of the random forest
+
+192
+00:09:38,079 --> 00:09:43,720
+and on the Y AIS the misclassification
+
+193
+00:09:40,519 --> 00:09:45,959
+error and the three lines correspond to
+
+194
+00:09:43,720 --> 00:09:49,279
+the out of back error estimates and the
+
+195
+00:09:45,959 --> 00:09:51,399
+middle line here is for the entire data
+
+196
+00:09:49,279 --> 00:09:53,519
+set and the other two lines are just for
+
+197
+00:09:51,399 --> 00:09:57,760
+class zero and just for class one so
+
+198
+00:09:53,519 --> 00:10:01,360
+just Spam that one or just nons Spam
+
+199
+00:09:57,760 --> 00:10:03,600
+this one um yeah and good thing is we
+
+200
+00:10:01,360 --> 00:10:06,079
+get a proper estimator of GE and we can
+
+201
+00:10:03,600 --> 00:10:07,600
+compute it during training and the nice
+
+202
+00:10:06,079 --> 00:10:11,720
+thing is that if we have trained an
+
+203
+00:10:07,600 --> 00:10:15,240
+ensemble with size m a capital M then we
+
+204
+00:10:11,720 --> 00:10:17,079
+can directly look at all smaller number
+
+205
+00:10:15,240 --> 00:10:19,560
+of trees as well right so we can just
+
+206
+00:10:17,079 --> 00:10:22,240
+look at the first M half trees or some
+
+207
+00:10:19,560 --> 00:10:24,200
+something something like that and have a
+
+208
+00:10:22,240 --> 00:10:26,320
+first impression of how this hyper
+
+209
+00:10:24,200 --> 00:10:30,399
+parameter affects the generalization
+
+210
+00:10:26,320 --> 00:10:30,399
+error of the entire emble
+
+211
+00:10:32,880 --> 00:10:39,519
+so one question could be how large this
+
+212
+00:10:36,279 --> 00:10:41,760
+a of back set usually is and it turns
+
+213
+00:10:39,519 --> 00:10:45,279
+out that the probability that an
+
+214
+00:10:41,760 --> 00:10:48,320
+observation is inside the or is out of
+
+215
+00:10:45,279 --> 00:10:53,600
+back for a given bootstrap sample
+
+216
+00:10:48,320 --> 00:10:57,519
+converges to 1 / by E so more or less
+
+217
+00:10:53,600 --> 00:11:00,079
+1/3 so it's similar to hold out with two
+
+218
+00:10:57,519 --> 00:11:01,399
+to one uh split or to fre full cross
+
+219
+00:11:00,079 --> 00:11:04,120
+relation of course it's not the same
+
+220
+00:11:01,399 --> 00:11:06,360
+thing yeah sure but it it feels a little
+
+221
+00:11:04,120 --> 00:11:10,399
+bit like this because it's also more or
+
+222
+00:11:06,360 --> 00:11:10,399
+less 1/3 for validation
+
+223
+00:11:10,440 --> 00:11:18,160
+data so some final remarks here the O
+
+224
+00:11:15,519 --> 00:11:20,720
+error is really unique to random forests
+
+225
+00:11:18,160 --> 00:11:22,839
+or begging so you can't use this out of
+
+226
+00:11:20,720 --> 00:11:25,399
+the box for some other machine learning
+
+227
+00:11:22,839 --> 00:11:27,240
+algorithms or Learners so if you want to
+
+228
+00:11:25,399 --> 00:11:28,440
+compare different models or different
+
+229
+00:11:27,240 --> 00:11:29,920
+Learners with different type of
+
+230
+00:11:28,440 --> 00:11:32,600
+parameter combination
+
+231
+00:11:29,920 --> 00:11:36,040
+like also compare kous neighbors or a
+
+232
+00:11:32,600 --> 00:11:39,399
+neural network or something like that
+
+233
+00:11:36,040 --> 00:11:42,040
+then you should rather use cross
+
+234
+00:11:39,399 --> 00:11:44,440
+validation hold out subsuming bootstrap
+
+235
+00:11:42,040 --> 00:11:46,360
+you name it just to be consistent
+
+236
+00:11:44,440 --> 00:11:49,440
+because we don't have OB error for these
+
+237
+00:11:46,360 --> 00:11:51,200
+other Learners right but you can use the
+
+238
+00:11:49,440 --> 00:11:53,279
+OB error to get a first impression of
+
+239
+00:11:51,200 --> 00:11:54,880
+the random Forest performance if you
+
+240
+00:11:53,279 --> 00:11:57,399
+just say okay I have a fixed hyper
+
+241
+00:11:54,880 --> 00:12:01,079
+parameter set I'm only interested in the
+
+242
+00:11:57,399 --> 00:12:02,880
+generalization error of this parameter
+
+243
+00:12:01,079 --> 00:12:05,600
+combination then you can definitely use
+
+244
+00:12:02,880 --> 00:12:07,760
+the OB error you can also use it to
+
+245
+00:12:05,600 --> 00:12:10,680
+select your aoral size so you just train
+
+246
+00:12:07,760 --> 00:12:13,639
+a large aoral and then look at the
+
+247
+00:12:10,680 --> 00:12:16,639
+smaller oror numbers as well to see
+
+248
+00:12:13,639 --> 00:12:18,399
+which ooral size is optimal and you can
+
+249
+00:12:16,639 --> 00:12:20,240
+rather efficiently evaluate different
+
+250
+00:12:18,399 --> 00:12:23,320
+random Forest hyperparameter
+
+251
+00:12:20,240 --> 00:12:26,519
+configurations for this last point of
+
+252
+00:12:23,320 --> 00:12:29,639
+course if you now look at a different
+
+253
+00:12:26,519 --> 00:12:32,959
+High parameter than N3 so max step for
+
+254
+00:12:29,639 --> 00:12:36,399
+example or mry then of course you have
+
+255
+00:12:32,959 --> 00:12:39,040
+to train these ensembles also with those
+
+256
+00:12:36,399 --> 00:12:41,120
+other hyper parameter combinations so of
+
+257
+00:12:39,040 --> 00:12:44,639
+course if you want to see how different
+
+258
+00:12:41,120 --> 00:12:47,839
+M Tri Par hyper parameter configurations
+
+259
+00:12:44,639 --> 00:12:51,560
+compare to each other you have to train
+
+260
+00:12:47,839 --> 00:12:55,320
+those models before you can compare the
+
+261
+00:12:51,560 --> 00:12:55,320
+generalization errors there

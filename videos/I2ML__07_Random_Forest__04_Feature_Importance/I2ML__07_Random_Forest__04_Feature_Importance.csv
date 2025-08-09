@@ -1,0 +1,245 @@
+index,time_range,text
+1,"00:00:00,480 --> 00:00:04,960",hello and welcome back to introduction
+2,"00:00:02,320 --> 00:00:06,600",to machine learning I'm lud bman and in
+3,"00:00:04,960 --> 00:00:09,519",this video I will present feature
+4,"00:00:06,600 --> 00:00:12,400",importance methods for random forests
+5,"00:00:09,519 --> 00:00:14,400",the basic goal will be to uh get a
+6,"00:00:12,400 --> 00:00:16,880",measure on how important different
+7,"00:00:14,400 --> 00:00:18,640",features are so here on the left hand
+8,"00:00:16,880 --> 00:00:21,800",side for example the features of the
+9,"00:00:18,640 --> 00:00:24,279",mcars data set and the higher value here
+10,"00:00:21,800 --> 00:00:27,160",means that this feature is very
+11,"00:00:24,279 --> 00:00:29,160",important so at the end of this uh video
+12,"00:00:27,160 --> 00:00:31,119",you should understand what the goal of
+13,"00:00:29,160 --> 00:00:32,840",feature importance is of course so
+14,"00:00:31,119 --> 00:00:35,640",enhancing interpretability of random
+15,"00:00:32,840 --> 00:00:37,719",forests and I will present two different
+16,"00:00:35,640 --> 00:00:39,960",methods of computing feature importance
+17,"00:00:37,719 --> 00:00:42,320",methods namely permutation feature
+18,"00:00:39,960 --> 00:00:45,600",importance and feature importance based
+19,"00:00:42,320 --> 00:00:45,600",on improvements in
+20,"00:00:45,640 --> 00:00:50,840",Split so we will start with the
+21,"00:00:47,840 --> 00:00:52,960",permutation feature importance a good
+22,"00:00:50,840 --> 00:00:55,600",thing about R forests is that it
+23,"00:00:52,960 --> 00:00:57,559",improves the predictive performance of
+24,"00:00:55,600 --> 00:01:00,160",those individual decision trees by
+25,"00:00:57,559 --> 00:01:01,960",combining them but the downside is that
+26,"00:01:00,160 --> 00:01:04,119",we lose
+27,"00:01:01,960 --> 00:01:07,000",interpretability feature importance
+28,"00:01:04,119 --> 00:01:09,000",tries to mitigate this problem the basic
+29,"00:01:07,000 --> 00:01:11,799",question that we ask ourselves in
+30,"00:01:09,000 --> 00:01:14,560",permutation feature importance is how
+31,"00:01:11,799 --> 00:01:17,280",much the performance decreases if a
+32,"00:01:14,560 --> 00:01:20,360",feature is removed or rendered useless
+33,"00:01:17,280 --> 00:01:24,280",so here in this visualization here we
+34,"00:01:20,360 --> 00:01:27,280",just ignore or delete the feature column
+35,"00:01:24,280 --> 00:01:29,200",length which is I hope okay as an
+36,"00:01:27,280 --> 00:01:31,040",intuition but the permutation feature
+37,"00:01:29,200 --> 00:01:33,680",importance doesn't really delete this
+38,"00:01:31,040 --> 00:01:35,119",column but it permutes the entries of
+39,"00:01:33,680 --> 00:01:37,960",this
+40,"00:01:35,119 --> 00:01:41,040",column the goal is to remove the
+41,"00:01:37,960 --> 00:01:44,320",associations between this feature and
+42,"00:01:41,040 --> 00:01:47,840",the target variable but to remain the
+43,"00:01:44,320 --> 00:01:50,320",marginal distribution of this feature
+44,"00:01:47,840 --> 00:01:54,040",length so what we will do is that we
+45,"00:01:50,320 --> 00:01:56,439",yeah randomly permute values of this
+46,"00:01:54,040 --> 00:01:58,600",column here which keeps the margin
+47,"00:01:56,439 --> 00:02:01,719",distribution as it was
+48,"00:01:58,600 --> 00:02:04,240",before and then we can obtain an
+49,"00:02:01,719 --> 00:02:07,520",estimate or generalization error of this
+50,"00:02:04,240 --> 00:02:09,800",random forest with the permuted features
+51,"00:02:07,520 --> 00:02:12,280",and without permuting the features by
+52,"00:02:09,800 --> 00:02:13,800",predicting OB data so it's efficiently
+53,"00:02:12,280 --> 00:02:15,680",it's very efficient to compute this
+54,"00:02:13,800 --> 00:02:17,640",feature importance during training
+55,"00:02:15,680 --> 00:02:20,000",because first we avoid training new
+56,"00:02:17,640 --> 00:02:22,599",models so imagine you really would
+57,"00:02:20,000 --> 00:02:24,640",delete the entire column length then the
+58,"00:02:22,599 --> 00:02:26,879",model you trained before is no longer
+59,"00:02:24,640 --> 00:02:29,920",valid so you have to train new models uh
+60,"00:02:26,879 --> 00:02:33,400",with one column less that's of course
+61,"00:02:29,920 --> 00:02:36,879",mutationally rather intensive and we can
+62,"00:02:33,400 --> 00:02:40,120",again use this o principle used those OB
+63,"00:02:36,879 --> 00:02:40,120",observations as test data
+64,"00:02:41,239 --> 00:02:48,720",points here you have the pseudo code and
+65,"00:02:44,920 --> 00:02:52,760",hopeful helpful visualization of this
+66,"00:02:48,720 --> 00:02:55,800",let's go through this algorithm together
+67,"00:02:52,760 --> 00:02:58,959",the very first thing you do is that you
+68,"00:02:55,800 --> 00:03:01,120",calculate the generalization error the
+69,"00:02:58,959 --> 00:03:04,080",OB generalization error using some set
+70,"00:03:01,120 --> 00:03:06,400",based metric or on the original data
+71,"00:03:04,080 --> 00:03:07,920",okay so before permuting anything you
+72,"00:03:06,400 --> 00:03:10,280",just take your data as you have it
+73,"00:03:07,920 --> 00:03:11,280",before and estimate the generalization
+74,"00:03:10,280 --> 00:03:16,000",error for
+75,"00:03:11,280 --> 00:03:19,040",this then the permutation starts so in
+76,"00:03:16,000 --> 00:03:21,200",the second so in the second step we
+77,"00:03:19,040 --> 00:03:23,040",iterate through all the features and
+78,"00:03:21,200 --> 00:03:26,560",let's say we just take one feature for
+79,"00:03:23,040 --> 00:03:29,920",now X1 for example then we do the
+80,"00:03:26,560 --> 00:03:32,239",following we ignore this third line for
+81,"00:03:29,920 --> 00:03:36,519",a second and I will come back to this uh
+82,"00:03:32,239 --> 00:03:37,640",later so we take feature x j for example
+83,"00:03:36,519 --> 00:03:40,400",Here
+84,"00:03:37,640 --> 00:03:42,280",length and we distort the feature Target
+85,"00:03:40,400 --> 00:03:46,840",relation by permuting
+86,"00:03:42,280 --> 00:03:51,599",XJ so what you see here from left to
+87,"00:03:46,840 --> 00:03:53,879",right is that the column length was
+88,"00:03:51,599 --> 00:03:57,280",permuted so the left hand side you have
+89,"00:03:53,879 --> 00:04:00,799",10 11 19 14 on the right hand side 11 19
+90,"00:03:57,280 --> 00:04:03,040",14 10 yeah but it's just this one column
+91,"00:04:00,799 --> 00:04:06,120",that gets permuted all the other
+92,"00:04:03,040 --> 00:04:08,239",features which you don't see and the
+93,"00:04:06,120 --> 00:04:12,079",target variable which banana is not
+94,"00:04:08,239 --> 00:04:16,079",permuted okay you just prute the First
+95,"00:04:12,079 --> 00:04:21,040",Column here of course you do this
+96,"00:04:16,079 --> 00:04:23,120",for all the bootstrap samples but yeah
+97,"00:04:21,040 --> 00:04:26,440",you basically commute the original data
+98,"00:04:23,120 --> 00:04:31,320",so the bootst samping is a step after
+99,"00:04:26,440 --> 00:04:33,199",that then you compute all the oob oob
+100,"00:04:31,320 --> 00:04:38,320",predictions for the permuted feature
+101,"00:04:33,199 --> 00:04:42,160",data so the fhe I subscript oob
+102,"00:04:38,320 --> 00:04:43,960",subscript P J okay so don't worry about
+103,"00:04:42,160 --> 00:04:47,759",all these subscripts here this just
+104,"00:04:43,960 --> 00:04:52,479",means that it's the
+105,"00:04:47,759 --> 00:04:57,120",predicted value for the I
+106,"00:04:52,479 --> 00:04:58,639",observation when permuting feature J
+107,"00:04:57,120 --> 00:05:00,759",okay it's just a prediction for this
+108,"00:04:58,639 --> 00:05:03,160",observation I you do for all n
+109,"00:05:00,759 --> 00:05:07,880",observations and arrange these these
+110,"00:05:03,160 --> 00:05:11,440",predictions in F head o o side J for the
+111,"00:05:07,880 --> 00:05:14,479",J feature and then with these
+112,"00:05:11,440 --> 00:05:16,680",predictions what you can do is you just
+113,"00:05:14,479 --> 00:05:20,639",compare the predictions with the True
+114,"00:05:16,680 --> 00:05:23,960",Values okay so for example here at the
+115,"00:05:20,639 --> 00:05:27,520",top you have on the yeah you just have
+116,"00:05:23,960 --> 00:05:30,680",these predictions here H for example so
+117,"00:05:27,520 --> 00:05:33,080",the OB o OB prediction for for this
+118,"00:05:30,680 --> 00:05:35,400",first tree would be would be no you do
+119,"00:05:33,080 --> 00:05:37,960",this of course for for all the trees as
+120,"00:05:35,400 --> 00:05:41,880",you have seen in the O era prediction
+121,"00:05:37,960 --> 00:05:44,840",junk and use some set based metric
+122,"00:05:41,880 --> 00:05:47,639",whichever you prefer to compare the true
+123,"00:05:44,840 --> 00:05:51,160",labels why with the
+124,"00:05:47,639 --> 00:05:53,319",predicted Target VAR Target values F had
+125,"00:05:51,160 --> 00:05:56,000",J to compute or to estimate some
+126,"00:05:53,319 --> 00:05:56,000",generalization
+127,"00:05:57,000 --> 00:06:04,720",error so then you have GE head of O
+128,"00:06:05,039 --> 00:06:10,039",OJ and in the next step you take the
+129,"00:06:08,039 --> 00:06:13,560",difference between this generalization
+130,"00:06:10,039 --> 00:06:15,880",error which kind of evaluates how good
+131,"00:06:13,560 --> 00:06:19,120",this model with a permuted feature
+132,"00:06:15,880 --> 00:06:22,960",performs on new unseen test data and
+133,"00:06:19,120 --> 00:06:26,479",compare it with what you have computed
+134,"00:06:22,960 --> 00:06:28,840",in the very first step the OB error of
+135,"00:06:26,479 --> 00:06:30,400",the data set without permuting any
+136,"00:06:28,840 --> 00:06:32,880",features
+137,"00:06:30,400 --> 00:06:37,199",okay and if you permute the features of
+138,"00:06:32,880 --> 00:06:41,160",course the model should get worse so the
+139,"00:06:37,199 --> 00:06:44,560",G this thing G head o BJ will be larger
+140,"00:06:41,160 --> 00:06:48,720",so you have a larger error so The Fad I
+141,"00:06:44,560 --> 00:06:50,639",fad sorry F I had J the estimated
+142,"00:06:48,720 --> 00:06:55,160",feature importances
+143,"00:06:50,639 --> 00:06:55,160",for feature J will be
+144,"00:06:56,039 --> 00:07:03,199",positive okay so far so good I hope
+145,"00:06:59,120 --> 00:07:05,560",let's now return to this third line here
+146,"00:07:03,199 --> 00:07:09,319",I said before I'll skip that for a
+147,"00:07:05,560 --> 00:07:11,080",moment the reason why we have to do this
+148,"00:07:09,319 --> 00:07:13,400",several or we have to do this several
+149,"00:07:11,080 --> 00:07:17,360",times first of all fact the reason why
+150,"00:07:13,400 --> 00:07:19,680",we do this is that it's a random process
+151,"00:07:17,360 --> 00:07:21,960",right so if you permute features if you
+152,"00:07:19,680 --> 00:07:23,560",do this several times the the concrete
+153,"00:07:21,960 --> 00:07:26,800",values after a permutation will be
+154,"00:07:23,560 --> 00:07:29,520",different so we can be more or less
+155,"00:07:26,800 --> 00:07:31,680",Lucky in these iterations and to to
+156,"00:07:29,520 --> 00:07:34,520",cancel out any Randomness going on we
+157,"00:07:31,680 --> 00:07:37,160",have to do this several times okay so
+158,"00:07:34,520 --> 00:07:39,639",not just once do this 100 times for
+159,"00:07:37,160 --> 00:07:42,280",example so this step here permutation of
+160,"00:07:39,639 --> 00:07:45,039",feature length has to be done not once
+161,"00:07:42,280 --> 00:07:48,599",but several
+162,"00:07:45,039 --> 00:07:52,479",times which means that you get not only
+163,"00:07:48,599 --> 00:07:56,960",one estimated feature importance for
+164,"00:07:52,479 --> 00:07:58,759",feature J but more of them let's say 100
+165,"00:07:56,960 --> 00:08:02,240",okay and in the end you take all these
+166,"00:07:58,759 --> 00:08:04,520",100 values and average over them to get
+167,"00:08:02,240 --> 00:08:08,479",a final feature permutation feature
+168,"00:08:04,520 --> 00:08:08,479",importance for feature
+169,"00:08:10,159 --> 00:08:17,720",J an alternative to permutation feature
+170,"00:08:14,159 --> 00:08:20,080",importance is impurity
+171,"00:08:17,720 --> 00:08:21,960",importance what happens here is that you
+172,"00:08:20,080 --> 00:08:25,680",add up all the improvements and splits
+173,"00:08:21,960 --> 00:08:31,200",will feature XJ is used how does that
+174,"00:08:25,680 --> 00:08:34,159",work let's say we take feature J okay
+175,"00:08:31,200 --> 00:08:37,560",then first of all we go through all the
+176,"00:08:34,159 --> 00:08:40,039",trained models B had M let's say we
+177,"00:08:37,560 --> 00:08:44,200",start with the first one here we find
+178,"00:08:40,039 --> 00:08:47,120",all splits which used XJ as splitting
+179,"00:08:44,200 --> 00:08:51,040",variable here we have two
+180,"00:08:47,120 --> 00:08:52,920",splits that used XJ for splitting and we
+181,"00:08:51,040 --> 00:08:55,440",extract the Improvement or the risk
+182,"00:08:52,920 --> 00:08:58,959",reduction for these splits so these plus
+183,"00:08:55,440 --> 00:09:00,120",plus I here mean that yeah plus plus I
+184,"00:08:58,959 --> 00:09:02,680",is a
+185,"00:09:00,120 --> 00:09:05,120",good uh Improvement Plus I is not is
+186,"00:09:02,680 --> 00:09:06,839",also okay but not that much and plus
+187,"00:09:05,120 --> 00:09:08,920",plus plus I is a very good Improvement
+188,"00:09:06,839 --> 00:09:11,399",okay so it's very handwave here this
+189,"00:09:08,920 --> 00:09:14,040",just stands for the fact that different
+190,"00:09:11,399 --> 00:09:16,040",splits can lead to different risk
+191,"00:09:14,040 --> 00:09:18,760",reductions or different
+192,"00:09:16,040 --> 00:09:22,040",improvements then we sum everything up
+193,"00:09:18,760 --> 00:09:23,399",do this for all the trees of course so
+194,"00:09:22,040 --> 00:09:26,079",in the end we add up all the
+195,"00:09:23,399 --> 00:09:31,360",improvements over all trees forgetting
+196,"00:09:26,079 --> 00:09:31,360",this feature importance of feature J
+197,"00:09:33,320 --> 00:09:37,720",some final remarks here so let's first
+198,"00:09:35,440 --> 00:09:39,120",of all compare the two Alternatives
+199,"00:09:37,720 --> 00:09:41,880",permutation feature importance and
+200,"00:09:39,120 --> 00:09:43,959",impurity based feature importance on the
+201,"00:09:41,880 --> 00:09:45,920",right hand side we have permutation
+202,"00:09:43,959 --> 00:09:48,079",feature importance you see the increase
+203,"00:09:45,920 --> 00:09:51,519",of the mean squared error for the mcars
+204,"00:09:48,079 --> 00:09:53,720",data set for all these features on the
+205,"00:09:51,519 --> 00:09:56,560",left hand side impurity importance using
+206,"00:09:53,720 --> 00:09:58,839",the jny impurity for the same data set
+207,"00:09:56,560 --> 00:10:01,680",for the same features and if you compare
+208,"00:09:58,839 --> 00:10:04,320",left to right right well more or less
+209,"00:10:01,680 --> 00:10:07,760",it's the same right not the values on
+210,"00:10:04,320 --> 00:10:10,760",the x-axis themselves but don't ever
+211,"00:10:07,760 --> 00:10:12,800",compare I don't know Genie impurity with
+212,"00:10:10,760 --> 00:10:15,000",permutation feature importancy absolute
+213,"00:10:12,800 --> 00:10:16,839",numbers doesn't make sense choose one of
+214,"00:10:15,000 --> 00:10:18,920",the feature importances and then compare
+215,"00:10:16,839 --> 00:10:21,160",those numbers that's okay but if you
+216,"00:10:18,920 --> 00:10:23,160",just look at the the relative importance
+217,"00:10:21,160 --> 00:10:26,079",let's say it's more or less the same so
+218,"00:10:23,160 --> 00:10:27,560",the order changes the first two features
+219,"00:10:26,079 --> 00:10:30,480",the first most important features seem
+220,"00:10:27,560 --> 00:10:33,320",to be disp and WT but then on the left
+221,"00:10:30,480 --> 00:10:37,200",hand side you have HP as third most
+222,"00:10:33,320 --> 00:10:38,160",important feature and c y l on the right
+223,"00:10:37,200 --> 00:10:42,880",hand
+224,"00:10:38,160 --> 00:10:45,360",side but then they come on fourth place
+225,"00:10:42,880 --> 00:10:47,720",so uh take home message here is
+226,"00:10:45,360 --> 00:10:49,600",basically they are not that that
+227,"00:10:47,720 --> 00:10:53,279",different
+228,"00:10:49,600 --> 00:10:55,160",okay um one one carat both methods are
+229,"00:10:53,279 --> 00:10:57,399",bias towards features with more levels
+230,"00:10:55,160 --> 00:10:59,880",so if you for example have categorical
+231,"00:10:57,399 --> 00:11:03,000",features with many categories uh they
+232,"00:10:59,880 --> 00:11:05,600",tend to get higher um feature importance
+233,"00:11:03,000 --> 00:11:09,079",values in both
+234,"00:11:05,600 --> 00:11:10,720",methods and small Outlook uh there are
+235,"00:11:09,079 --> 00:11:13,480",more advanced
+236,"00:11:10,720 --> 00:11:15,160",versions um and most of all these
+237,"00:11:13,480 --> 00:11:17,320",pration feature and impurity feature
+238,"00:11:15,160 --> 00:11:20,880",importance can be generalized were
+239,"00:11:17,320 --> 00:11:23,279",generalized uh with a total lecture on
+240,"00:11:20,880 --> 00:11:25,600",inter interpretable machine learning
+241,"00:11:23,279 --> 00:11:28,120",where we have a lot of uh sections here
+242,"00:11:25,600 --> 00:11:30,440",on the details of all these feature
+243,"00:11:28,120 --> 00:11:32,240",importance measures and also on other
+244,"00:11:30,440 --> 00:11:35,959",feature importance measures that have
